@@ -19,7 +19,7 @@
         "Ker je predolgo"
       ],
       "c": 1,
-      "e": "Če nekdo ugane eno geslo, lahko dostopa do vseh računov."
+      "e": "Če nekdo ugane eno geslo, lahko dostopa do vseh tvojih  računov."
     },
     {
       "q": "Kaj pomeni, če spletna stran zahteva preveč osebnih podatkov?",
@@ -49,7 +49,7 @@
         "Virus"
       ],
       "c": 0,
-      "e": "Varnostna kopija (backup) omogoča obnovitev podatkov ob težavah."
+      "e": "Varnostna kopija (backup) omogoča obnovitev podatkov ob težavah. Najbolje če ji imamo na zunanji enoti."
     },
     {
       "q": "Zakaj je pomembno posodabljati programe?",
@@ -59,7 +59,7 @@
         "Ker moraš"
       ],
       "c": 1,
-      "e": "Posodobitve odpravljajo napake in izboljšajo varnost."
+      "e": "Posodobitve odpravljajo napake, izboljšajo varnost, pogosto dodajo nove funkcionalnosti."
     },
     {
       "q": "Kaj pomeni 'phishing' (ribarjenje)?",
@@ -69,7 +69,8 @@
         "Vrsta programa"
       ],
       "c": 1,
-      "e": "Gre za lažna sporočila, ki poskušajo ukrasti podatke."
+      "e": "Phishing (slovensko pogosto preveden kot ribarjenje) je spletna prevara, pri kateri vas nekdo poskuša pretentati, da mu sami izročite občutljive podatke, kot so: uporabniško ime in geslo,
+številka bančne kartice, PIN ali varnostna koda, številka osebnega dokumenta..."
     },
     {
       "q": "Kaj narediš, če pozabiš geslo?",
@@ -109,7 +110,7 @@
         "Dva uporabnika"
       ],
       "c": 1,
-      "e": "Poleg gesla potrebuješ še dodatno potrditev, recimo SMS na tvojo GSM številko."
+      "e": "Poleg gesla je potrebna še dodatno potrditev, recimo SMS na tvojo GSM številko. To je smiselno narediti za spletne trgovine."
     },
     {
       "q": "Kaj narediš, če vidiš oglas, da si nekaj zadel?",
@@ -119,7 +120,7 @@
         "Pošlješ prijatelju"
       ],
       "c": 1,
-      "e": "Takšni oglasi so pogosto prevara. Če nisi nič igral, tudi zadeti ne moreš."
+      "e": "Takšni oglasi so praviloma prevara. Če nisi nič igral, tudi zadeti ne moreš."
     },
     {
       "q": "Kaj pomeni 'oblak (cloud)'?",
@@ -179,7 +180,7 @@
         "Izbrišeš internet"
       ],
       "c": 0,
-      "e": "Zgodovino lahko izbrišeš v nastavitvah brskalnika. Lahko tudi izklopiš tako, da se več ne shranjuje."
+      "e": "Zgodovino lahko izbrišeš v nastavitvah brskalnika. Lahko tudi izklopiš, tako da se več ne shranjuje."
     },
     {
       "q": "Na telefonu dobiš SMS s povezavo za paket. Kaj narediš?",
@@ -219,7 +220,7 @@
         "Deliš geslo"
       ],
       "c": 0,
-      "e": "Močno geslo je osnova varnosti. Naj bo sestavljeno iz velikih in malih črk, številk in posebnih simbolov."
+      "e": "Močno geslo je osnova varnosti. Naj bo sestavljeno iz velikih in malih črk (Aa), številk (123) in posebnih simbolov (;:,)."
     },
     {
       "q": "Dobiš e-pošto: 'Vaša banka zahteva takojšnjo prijavo'. V sporočilu je povezava. Kaj narediš?",
@@ -229,7 +230,7 @@
         "Odgovoriš na e-pošto"
       ],
       "c": 1,
-      "e": "Nikoli ne klikaj povezav iz sumljivih sporočil. Vedno sam odpri pravo stran."
+      "e": "Nikoli ne klikaj povezav iz sumljivih sporočil. Vedno sam odpri pravo stran (npr: www.otp.si)."
     },
     {
       "q": "Kaj narediš, če nisi prepričan v neko spletno stran?",
@@ -239,7 +240,7 @@
         "Kupuješ takoj"
       ],
       "c": 1,
-      "e": "Vedno preveri stran, najbolje da preveriš naslov npr. https://www.nlb.si."
+      "e": "Vedno preveri stran, najbolje da preveriš naslov npr. https://www.aliexpress.com"
     },
     {
       "q": "Kaj pomeni 'digitalna sled'?",
