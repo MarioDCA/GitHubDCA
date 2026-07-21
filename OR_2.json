@@ -232,7 +232,7 @@
       "e": "Obnova vrne datoteko nazaj na prvotno mesto. Vse 'pobrisane' datoteke se do dokončnega izbrisa nahajajo v košu."
     },
     {
-      "q": "Kaj pomeni, če je besedilo modro in podčrtano (recimo v e-pošti)?",
+      "q": "Kaj pomeni, če je besedilo modro obarvano in podčrtano (recimo v e-pošti)?",
       "a": [
         "To je povezava (link)",
         "To je napaka",
