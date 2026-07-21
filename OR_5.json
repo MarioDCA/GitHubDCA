@@ -1,0 +1,255 @@
+{
+  "naslov": "Kviz osnove računalništva 5",
+  "vprasanja": [
+    {
+      "q": "Kaj je 'oddaljeno namizje' (Remote Desktop)?",
+      "a": [
+        "Program za risanje",
+        "Vrsta brskalnika",
+        "Dostop do tvojega računalnika z druge lokacije"
+      ],
+      "c": 2,
+      "e": "Z oddaljenim namizjem lahko upravljaš svoj računalnik s službenega ali prijateljevega računalnika."
+    },
+    {
+      "q": "Kaj naredi bližnjica Ctrl+F v brskalniku ali dokumentu?",
+      "a": [
+        "Odpre iskalno polje za iskanje besedila na trenutni strani",
+        "Shrani datoteko",
+        "Odpre nastavitve"
+      ],
+      "c": 0,
+      "e": "Ctrl+F odpre iskalno polje – vpišeš besedo in brskalnik ti pokaže, kje se nahaja na strani."
+    },
+    {
+      "q": "Kaj je družbeno omrežje (npr. Facebook, Instagram)?",
+      "a": [
+        "Spletna storitev za povezovanje in deljenje vsebin z drugimi ljudmi",
+        "Vrsta virusa",
+        "Operacijski sistem"
+      ],
+      "c": 0,
+      "e": "Družbena omrežja omogočajo deljenje fotografij, sporočil in novic z drugimi uporabniki."
+    },
+    {
+      "q": "Kaj je YouTube?",
+      "a": [
+        "Spletna stran za gledanje in deljenje videoposnetkov",
+        "Program za urejanje besedil",
+        "Vrsta e-pošte"
+      ],
+      "c": 0,
+      "e": "YouTube je spletna platforma, kjer lahko gledaš, nalagaš in deliš videoposnetke."
+    },
+    {
+      "q": "Kaj je e-banka (spletno bančništvo)?",
+      "a": [
+        "Storitev, ki omogoča upravljanje bančnega računa preko spleta",
+        "Vrsta bankovca",
+        "Program za igre"
+      ],
+      "c": 0,
+      "e": "Z e-banko lahko preverjaš stanje, plačuješ položnice in nakazuješ denar preko računalnika ali telefona."
+    },
+    {
+      "q": "Kaj je 'ločljivost' zaslona?",
+      "a": [
+        "Število pik (slikovnih točk) na zaslonu",
+        "Velikost zaslona v centimetrih",
+        "Svetlost zaslona"
+      ],
+      "c": 0,
+      "e": "Ločljivost npr. 1920x1080 pomeni 1920 pik vodoravno in 1080 navpično – več pik je ostrejša slika."
+    },
+    {
+      "q": "Kaj pomeni 'Ctrl+C' in 'Ctrl+V'?",
+      "a": [
+        "Odpri in shrani",
+        "Izbriši in obnovi",
+        "Kopiraj in prilepi"
+      ],
+      "c": 2,
+      "e": "Ctrl+C kopira označeno vsebino, Ctrl+V jo prilepi na drugo mesto – zelo uporabna bližnjica!"
+    },
+    {
+      "q": "Kaj je QR koda?",
+      "a": [
+        "Kvadratna slika, ki jo s telefonom poskeniraš za hiter dostop do informacije",
+        "Vrsta gesla",
+        "Napaka na zaslonu"
+      ],
+      "c": 0,
+      "e": "QR kodo poskeniraš s kamero telefona, ta pa te npr. odpelje na spletno stran ali pokaže informacijo."
+    },
+    {
+      "q": "Kako odpreš Nastavitve (Settings) v Windows?",
+      "a": [
+        "Klikneš začetni menu → ikona zobnika (⚙️)",
+        "Desni klik na namizje",
+        "Pritisneš gumb za vklop"
+      ],
+      "c": 0,
+      "e": "Nastavitve so kot 'nadzorna plošča' – tam spreminjaš ozadje, glasnost, omrežje, programe..."
+    },
+    {
+      "q": "Kaj je zavihek (tab) v spletnem brskalniku?",
+      "a": [
+        "Ločen prostor za odprto spletno stran znotraj istega okna brskalnika",
+        "Gumb za izklop računalnika",
+        "Vrsta datoteke"
+      ],
+      "c": 0,
+      "e": "Zavihki ti omogočajo, da imaš več spletnih strani odprtih hkrati znotraj enega okna brskalnika."
+    },
+    {
+      "q": "Kaj so obvestila (notifikacije)?",
+      "a": [
+        "Sporočila, ki te opozorijo na novost (npr. nova e-pošta, sporočilo)",
+        "Vrsta gesla",
+        "Nastavitev zaslona"
+      ],
+      "c": 0,
+      "e": "Obvestila te sproti opozarjajo na dogodke, npr. prejeto sporočilo ali posodobitev aplikacije."
+    },
+    {
+      "q": "Kaj pomeni kratica USB?",
+      "a": [
+        "Univerzalni brskalnik",
+        "Univerzalno serijsko vodilo",
+        "Uporabniško sistemsko orodje"
+      ],
+      "c": 1,
+      "e": "USB (Universal serial bus: univerzalno serijsko vodilo) je standard za priklop naprav (miška, tipkovnica, USB ključ) na računalnik."
+    },
+    {
+      "q": "Kaj pomeni 'način za letalo' (Airplane mode) na telefonu?",
+      "a": [
+        "Izklopi vse brezžične povezave (Wi-Fi, mobilni podatki, Bluetooth)",
+        "Vklopi kamero",
+        "Poveča glasnost"
+      ],
+      "c": 0,
+      "e": "Način za letalo izklopi brezžične signale - uporaben med letom ali za varčevanje baterije."
+    },
+    {
+      "q": "Kaj naredi bližnjica Alt+Tab v Windows?",
+      "a": [
+        "Preklopi med odprtimi programi/okni",
+        "Zapre računalnik",
+        "Poveča glasnost"
+      ],
+      "c": 0,
+      "e": "Alt+Tab ti omogoča hitro preklapljanje med odprtimi programi, ne da bi vsakega posebej iskal z miško."
+    },
+    {
+      "q": "Kako zaklenete računalnik, ko za trenutek odidete od njega?",
+      "a": [
+        "Pritisnete tipki Windows in L",
+        "Izklopite zaslon",
+        "Izvlečete kabel"
+      ],
+      "c": 0,
+      "e": "Windows+L zaklene računalnik - za ponoven dostop je potrebno vnesti geslo. Priporočljivo, kadar zapustiš delovno mesto."
+    },
+    {
+      "q": "Kaj je emoji 😊?",
+      "a": [
+        "Majhna slikovna simbolna izraža čustva ali predmete v sporočilih",
+        "Vrsta virusa",
+        "Ime brskalnika"
+      ],
+      "c": 0,
+      "e": "Emoji uporabljamo v sporočilih, da hitro in slikovito izrazimo čustva ali misli."
+    },
+    {
+      "q": "Kaj narediš, če se računalnik ne zažene?",
+      "a": [
+        "Ga vržeš stran",
+        "Kupiš novega",
+        "Preveriš kable, poskusiš varen način, poiščeš pomoč"
+      ],
+      "c": 2,
+      "e": "Najprej preveri napajanje, kable, poskusi z varnim načinom (F8) ali poišči strokovno pomoč."
+    },
+    {
+      "q": "Kaj je 'piškotek' (cookie) na spletu?",
+      "a": [
+        "Majhna datoteka, ki si jo spletna stran shrani na tvoj računalnik",
+        "Virus",
+        "Oglas"
+      ],
+      "c": 0,
+      "e": "Piškotki si zapomnijo tvoje nastavitve (npr. prijavno ime, jezik) – večinoma so uporabni."
+    },
+    {
+      "q": "Kaj pomeni HTTP in HTTPS?",
+      "a": [
+        "Vrsta brskalnika",
+        "Protokol za prenos spletnih strani – HTTPS je šifriran",
+        "Ime datoteke"
+      ],
+      "c": 1,
+      "e": "HTTPS je varna različica HTTP – prepoznaš jo po ključavnici v naslovni vrstici."
+    },
+    {
+      "q": "Kje je opravilna vrstica (taskbar) v Windows?",
+      "a": [
+        "Na sredini zaslona",
+        "Običajno na dnu zaslona",
+        "Zgoraj desno"
+      ],
+      "c": 1,
+      "e": "Opravilna vrstica je običajno na dnu zaslona – tam so gumbi za zagon programov, ura in obvestila."
+    },
+    {
+      "q": "Kaj je pametni telefon (smartphone)?",
+      "a": [
+        "Telefon z dostopom do interneta in aplikacij, podoben mini računalniku",
+        "Telefon samo za klice in SMS",
+        "Vrsta tiskalnika"
+      ],
+      "c": 0,
+      "e": "Pametni telefon poleg klicanja omogoča brskanje po spletu, uporabo aplikacij, fotografiranje in še veliko več."
+    },
+    {
+      "q": "Kam naj shranjujem varnostne kopije?",
+      "a": [
+        "Na isti disk kot izvirne podatke",
+        "V koš",
+        "Na zunanji disk, USB ključek ali v oblak"
+      ],
+      "c": 2,
+      "e": "Varnostno kopijo shrani na drugo mesto (zunanji disk, oblak) – če odpove tvoj računalnik, podatki ostanejo varni."
+    },
+    {
+      "q": "Kaj je razlika med 'kopiranjem' in 'premikanjem' datotek?",
+      "a": [
+        "Ni razlike",
+        "Premikanje naredi dve kopiji",
+        "Kopiranje pusti izvirnik, premikanje ga odstrani"
+      ],
+      "c": 2,
+      "e": "Ko kopiraš, datoteka ostane na istem mestu. Ko premakneš, jo odstraniš s prvotnega mesta."
+    },
+    {
+      "q": "Zakaj včasih spletna stran vpraša: 'Sprejmi piškotke'?",
+      "a": [
+        "Ker je virus",
+        "Zaradi zakonodaje o zasebnosti (GDPR)",
+        "Ker je stran pokvarjena"
+      ],
+      "c": 1,
+      "e": "Zakon zahteva, da strani pridobijo tvoje dovoljenje, preden shranijo piškotke na tvoj računalnik."
+    },
+    {
+      "q": "Kaj je aplikacijska trgovina (npr. Google Play, App Store)?",
+      "a": [
+        "Mesto, kjer prenesete in namestite aplikacije na telefon",
+        "Trgovina z računalniki",
+        "Program za urejanje slik"
+      ],
+      "c": 0,
+      "e": "V aplikacijski trgovini najdeš in namestiš aplikacije za svoj telefon ali tablico."
+    }
+  ]
+}

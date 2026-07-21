@@ -1,0 +1,255 @@
+{
+  "naslov": "Kviz osnove računalništva 3",
+  "vprasanja": [
+    {
+      "q": "Prejmeš e-pošto od neznane osebe z naslovom 'NUJNO!'. Kaj narediš?",
+      "a": [
+        "Takoj odpreš priponko",
+        "Preveriš pošiljatelja in po potrebi izbrišeš",
+        "Odgovoriš na e-pošto"
+      ],
+      "c": 1,
+      "e": "Sumljiva sporočila pogosto vsebujejo viruse ali prevare."
+    },
+    {
+      "q": "Zakaj ni dobro uporabljati istega gesla povsod?",
+      "a": [
+        "Ker si ga lahko pozabiš",
+        "Ker lahko ob vdoru izgubimo več računov",
+        "Ker je predolgo"
+      ],
+      "c": 1,
+      "e": "Če nekdo ugane eno geslo, lahko dostopa do vseh računov."
+    },
+    {
+      "q": "Kaj pomeni, če spletna stran zahteva preveč osebnih podatkov?",
+      "a": [
+        "Da je zelo dobra stran",
+        "Da je lahko nevarna",
+        "Da je obvezno izpolniti"
+      ],
+      "c": 1,
+      "e": "Zanesljive strani zahtevajo le nujne podatke."
+    },
+    {
+      "q": "Kaj narediš, če se računalnik nenadoma zelo upočasni?",
+      "a": [
+        "Ignoriraš",
+        "Ponovno zaženeš in preveriš programe",
+        "Vržeš računalnik stran"
+      ],
+      "c": 1,
+      "e": "Najbolje je narediti ponovni zagon računalnika - pogosto reši težave."
+    },
+    {
+      "q": "Kaj pomeni 'varnostna kopija (backup)'?",
+      "a": [
+        "Kopija pomembnih podatkov",
+        "Izbris datotek",
+        "Virus"
+      ],
+      "c": 0,
+      "e": "Varnostna kopija (backup) omogoča obnovitev podatkov ob težavah."
+    },
+    {
+      "q": "Zakaj je pomembno posodabljati programe?",
+      "a": [
+        "Da zasedejo manj prostora",
+        "Zaradi varnosti in izboljšav",
+        "Ker moraš"
+      ],
+      "c": 1,
+      "e": "Posodobitve odpravljajo napake in izboljšajo varnost."
+    },
+    {
+      "q": "Kaj pomeni 'phishing' (ribarjenje)?",
+      "a": [
+        "Ribolov",
+        "Poskus prevare za krajo podatkov",
+        "Vrsta programa"
+      ],
+      "c": 1,
+      "e": "Gre za lažna sporočila, ki poskušajo ukrasti podatke."
+    },
+    {
+      "q": "Kaj narediš, če pozabiš geslo?",
+      "a": [
+        "Ustvariš nov račun",
+        "Izbereš možnost 'pozabljeno geslo'",
+        "Ne narediš nič"
+      ],
+      "c": 1,
+      "e": "Večina strani omogoča obnovo pozabljenega gesla."
+    },
+    {
+      "q": "Kako lahko preveriš, ali je spletna stran zaupanja vredna?",
+      "a": [
+        "Takoj vneseš podatke",
+        "Preveriš naslov strani in razmisliš, ali jo poznaš",
+        "Klikneš prvi oglas"
+      ],
+      "c": 1,
+      "e": "Vedno preveri naslov strani (npr. banka.si) in razmisli, ali ji zaupaš."
+    },
+    {
+      "q": "Kaj narediš, če prejmeš čuden klic, ki zahteva tvoje podatke?",
+      "a": [
+        "Poveš podatke",
+        "Prekineš klic",
+        "Pošlješ SMS"
+      ],
+      "c": 1,
+      "e": "Nikoli ne deli osebnih podatkov po telefonu brez preverjanja."
+    },
+    {
+      "q": "Kaj pomeni 'dvofaktorska prijava (2FA)'?",
+      "a": [
+        "Dva računalnika",
+        "Dodatna zaščita poleg gesla",
+        "Dva uporabnika"
+      ],
+      "c": 1,
+      "e": "Poleg gesla potrebuješ še dodatno potrditev, recimo SMS na tvojo GSM številko."
+    },
+    {
+      "q": "Kaj narediš, če vidiš oglas, da si nekaj zadel?",
+      "a": [
+        "Klikneš takoj",
+        "Ignoriraš ali zapreš",
+        "Pošlješ prijatelju"
+      ],
+      "c": 1,
+      "e": "Takšni oglasi so pogosto prevara. Če nisi nič igral, tudi zadeti ne moreš."
+    },
+    {
+      "q": "Kaj pomeni 'oblak (cloud)'?",
+      "a": [
+        "Shranjevanje podatkov na internetu",
+        "Vreme",
+        "Program"
+      ],
+      "c": 0,
+      "e": "Datoteke so shranjene na strežnikih in dostopne od kjerkoli."
+    },
+    {
+      "q": "Kaj narediš, če želiš zaščititi računalnik?",
+      "a": [
+        "Namestiš antivirus",
+        "Ne delaš nič",
+        "Izklopiš internet"
+      ],
+      "c": 0,
+      "e": "Antivirus pomaga zaščititi računalnik. V Windows okolju je že nameščen, ni potrebe po dodatnem."
+    },
+    {
+      "q": "Napisal si dokument in ga želiš poslati prijatelju. Kaj narediš?",
+      "a": [
+        "Shraniš dokument in ga pošlješ po e-pošti",
+        "Izbrišeš dokument",
+        "Zapreš računalnik"
+      ],
+      "c": 0,
+      "e": "Datoteko moraš najprej shraniti, nato jo lahko pošlješ kot priponko v e-pošti."
+    },
+    {
+      "q": "Kaj narediš, če spletna stran ne deluje pravilno?",
+      "a": [
+        "Osvežiš stran",
+        "Izklopiš računalnik",
+        "Vržeš stran"
+      ],
+      "c": 0,
+      "e": "Osvežitev pogosto reši težavo ⟳."
+    },
+    {
+      "q": "Kaj pomeni 'zgodovina brskanja'?",
+      "a": [
+        "Seznam obiskanih strani",
+        "Seznam datotek",
+        "Seznam gesel"
+      ],
+      "c": 0,
+      "e": "Brskalnik si zapomni obiskane strani. Zgodovino brskanja je možno preprečiti, izbrisati..."
+    },
+    {
+      "q": "Kaj narediš, če želiš izbrisati zgodovino?",
+      "a": [
+        "Uporabiš nastavitve brskalnika, poiščeš 'Zgodovina'",
+        "Izklopiš računalnik",
+        "Izbrišeš internet"
+      ],
+      "c": 0,
+      "e": "Zgodovino lahko izbrišeš v nastavitvah brskalnika. Lahko tudi izklopiš tako, da se več ne shranjuje."
+    },
+    {
+      "q": "Na telefonu dobiš SMS s povezavo za paket. Kaj narediš?",
+      "a": [
+        "Klikneš povezavo",
+        "Preveriš pri dostavni službi ali ignoriraš",
+        "Pošlješ naprej"
+      ],
+      "c": 1,
+      "e": "SMS sporočila s povezavami so pogost način prevar."
+    },
+    {
+      "q": "Kaj narediš, če želiš poslati posnetek zaslona?",
+      "a": [
+        "Pripneš ga v e-pošto",
+        "Izbrišeš ga",
+        "Zapreš program"
+      ],
+      "c": 0,
+      "e": "Pošlješ ga kot priponko."
+    },
+    {
+      "q": "Kaj pomeni 'iskati po sliki'?",
+      "a": [
+        "Uporabiti sliko za iskanje informacij",
+        "Izbrisati sliko",
+        "Shrani sliko"
+      ],
+      "c": 0,
+      "e": "Iskalniki omogočajo iskanje tudi po slikah, npr. Google Lens."
+    },
+    {
+      "q": "Kaj narediš, če želiš povečati varnost računa?",
+      "a": [
+        "Uporabiš močno geslo",
+        "Uporabiš 1234",
+        "Deliš geslo"
+      ],
+      "c": 0,
+      "e": "Močno geslo je osnova varnosti. Naj bo sestavljeno iz velikih in malih črk, številk in posebnih simbolov."
+    },
+    {
+      "q": "Dobiš e-pošto: 'Vaša banka zahteva takojšnjo prijavo'. V sporočilu je povezava. Kaj narediš?",
+      "a": [
+        "Klikneš povezavo in se prijaviš",
+        "Ignoriraš sporočilo ali sam vpišeš naslov banke v brskalnik",
+        "Odgovoriš na e-pošto"
+      ],
+      "c": 1,
+      "e": "Nikoli ne klikaj povezav iz sumljivih sporočil. Vedno sam odpri pravo stran."
+    },
+    {
+      "q": "Kaj narediš, če nisi prepričan v neko spletno stran?",
+      "a": [
+        "Vpišeš osebne podatke",
+        "Zapreš ali preveriš",
+        "Kupuješ takoj"
+      ],
+      "c": 1,
+      "e": "Vedno preveri stran, najbolje da preveriš naslov npr. https://www.nlb.si."
+    },
+    {
+      "q": "Kaj pomeni 'digitalna sled'?",
+      "a": [
+        "Podatki, ki jih puščaš na internetu",
+        "Sledi miške",
+        "Napaka"
+      ],
+      "c": 0,
+      "e": "Vsaka dejavnost na internetu pusti določene sledi."
+    }
+  ]
+}

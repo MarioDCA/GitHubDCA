@@ -1,0 +1,255 @@
+{
+  "naslov": "Kviz osnove računalništva 2",
+  "vprasanja": [
+    {
+      "q": "Katera naprava na računalniku prikazuje sliko?",
+      "a": [
+        "Zaslon (monitor)",
+        "Tipkovnica",
+        "Miška"
+      ],
+      "c": 0,
+      "e": "Zaslon je naprava, ki prikazuje sliko, besedilo in programe."
+    },
+    {
+      "q": "Kaj je spletna stran?",
+      "a": [
+        "Dokument na spletu",
+        "Program na računalniku",
+        "Mapa"
+      ],
+      "c": 0,
+      "e": "Spletna stran vsebuje informacije, slike ali video vsebine na spletu."
+    },
+    {
+      "q": "Kaj je naslovna vrstica v brskalniku?",
+      "a": [
+        "Prostor za vpis spletnega naslova",
+        "Tipkovnica",
+        "Oglaševalski prostor"
+      ],
+      "c": 0,
+      "e": "V naslovno vrstico vpišeš naslov spletne strani (npr. www...)."
+    },
+    {
+      "q": "Kaj je povezava (link)?",
+      "a": [
+        "Besedilo ali gumb za odpiranje strani",
+        "Tipka na tipkovnici",
+        "Vrsta kabla"
+      ],
+      "c": 0,
+      "e": "Klik na povezavo te odpelje na drugo spletno stran."
+    },
+    {
+      "q": "Kaj pomeni, če vidiš drsnik (scroll bar) ob strani?",
+      "a": [
+        "Stran ima več vsebine",
+        "Računalnik ne dela",
+        "Program se je zaprl"
+      ],
+      "c": 0,
+      "e": "Drsnik pomeni, da lahko s pomočjo sukanja koleščka na miški vidiš še več vsebine (navzdol ali navzgor)."
+    },
+    {
+      "q": "Kaj pomeni 'scrollati' (pomikati navzdol/navzgor)?",
+      "a": [
+        "Premikati vsebino datoteke po zaslonu",
+        "Izklopiti program",
+        "Kopirati datoteko"
+      ],
+      "c": 0,
+      "e": "Scrollanje pomeni, da se premikaš po strani gor ali dol."
+    },
+    {
+      "q": "Kako se 'osveži' spletna stran?",
+      "a": [
+        "Zapreš spletni brskalnik in ga ponovno zaženeš.",
+        "Klikneš krožno puščico zgoraj levo v spletnem brskalniku ↻",
+        "Ugasneš in ponovno prižgeš računalnik"
+      ],
+      "c": 1,
+      "e": "Osvežitev (krožna puščica zgoraj levo ↻) ponovno naloži trenutno spletno stran."
+    },
+    {
+      "q": "Kaj je program na računalniku?",
+      "a": [
+        "Program je orodje, ki nekaj naredi (npr. piše besedilo ali riše, z njim brskaš po spletu)",
+        "Fizični del računalnika",
+        "Vrsta kabla"
+      ],
+      "c": 0,
+      "e": "Program je programska oprema, ki omogoča izvajanje različnih nalog, npr. pisanje, računanje ali brskanje po spletu."
+    },
+    {
+      "q": "Kaj je aplikacija (app)?",
+      "a": [
+        "Program, ki ga uporabljaš za določeno nalogo (npr. sporočila ali vreme)",
+        "Del tipkovnice",
+        "Zaslon računalnika"
+      ],
+      "c": 0,
+      "e": "Aplikacija je običajno enostaven program, pogosto na telefonu, namenjen eni določeni nalogi."
+    },
+    {
+      "q": "Kaj pomeni 'odpreti datoteko'?",
+      "a": [
+        "Izbrisati datoteko",
+        "Prikazati njeno vsebino",
+        "Premakniti datoteko"
+      ],
+      "c": 1,
+      "e": "Ko odpreš datoteko, vidiš njeno vsebino."
+    },
+    {
+      "q": "Kaj pomeni 'prenesti datoteko (download)'?",
+      "a": [
+        "Poslati datoteko",
+        "Shraniti datoteko s spleta",
+        "Izbrisati datoteko"
+      ],
+      "c": 1,
+      "e": "Prenos pomeni, da datoteko iz spleta shraniš na računalnik."
+    },
+    {
+      "q": "Kaj pomeni 'naložiti datoteko (upload)'?",
+      "a": [
+        "Poslati datoteko na splet",
+        "Izbrisati datoteko",
+        "Odpreti datoteko"
+      ],
+      "c": 0,
+      "e": "Nalaganje pomeni, da datoteko pošlješ na splet ali drug računalnik."
+    },
+    {
+      "q": "Kako zapremo program na računalniku?",
+      "a": [
+        "Kliknemo na gumb X v zgornjem desnem kotu",
+        "Izklopimo računalnik",
+        "Izvlečemo kabel"
+      ],
+      "c": 0,
+      "e": "Program zapremo tako, da kliknemo na gumb X. Tako se pravilno ustavi njegovo delovanje."
+    },
+    {
+      "q": "Kaj je kamera na računalniku?",
+      "a": [
+        "Naprava za snemanje slike",
+        "Naprava za snemanje zvoka",
+        "Miška"
+      ],
+      "c": 0,
+      "e": "Kamera omogoča video klice in snemanje video vsebin."
+    },
+    {
+      "q": "Kaj je mikrofon?",
+      "a": [
+        "Naprava za zajem zvoka",
+        "Zaslon",
+        "Tiskalnik"
+      ],
+      "c": 0,
+      "e": "Mikrofon omogoča snemanje govora in zvoka."
+    },
+    {
+      "q": "Kaj narediš, če želiš povečati tekst na zaslonu?",
+      "a": [
+        "Uporabiš kombinacijo tipk CTRL in +",
+        "Izklopiš računalnik",
+        "Zmanjšaš glasnost"
+      ],
+      "c": 0,
+      "e": "Velikost besedila lahko povečaš v nastavitvah ali s povečevanjem (zoom), v brskalniku s kombinacijo tipk CTRL in +."
+    },
+    {
+      "q": "Kaj se zgodi, če nimaš povezave na splet?",
+      "a": [
+        "Ne moreš odpirati spletnih strani",
+        "Računalnik se pokvari",
+        "Tipkovnica ne deluje"
+      ],
+      "c": 0,
+      "e": "Brez povezave na splet ne moreš dostopati do spletnih strani ali e-pošte."
+    },
+    {
+      "q": "Kaj pomeni 'kopirati datoteko'?",
+      "a": [
+        "Narediti kopijo datoteke",
+        "Izbrisati datoteko",
+        "Premakniti datoteko"
+      ],
+      "c": 0,
+      "e": "Kopiranje ustvari enako datoteko na drugem mestu."
+    },
+    {
+      "q": "Kaj pomeni 'prilepiti' (paste)?",
+      "a": [
+        "Vstaviti prej kopirano ali izrezano datoteko ali besedilo",
+        "Odpreti datoteko",
+        "Izbrisati datoteko"
+      ],
+      "c": 0,
+      "e": "Prilepiti pomeni, da vstaviš tisto, kar si prej kopiral ali izrezal."
+    },
+    {
+      "q": "Kaj pomeni 'izrezati datoteko'?",
+      "a": [
+        "Narediti kopijo",
+        "Premakniti datoteko",
+        "Odpreti datoteko"
+      ],
+      "c": 1,
+      "e": "Izrez pomeni, da datoteko premakneš na drugo mesto."
+    },
+    {
+      "q": "Kaj pomeni, če klikneš na 'X' v programu?",
+      "a": [
+        "Zapreš program",
+        "Shraniš dokument",
+        "Odpreš nov program"
+      ],
+      "c": 0,
+      "e": "Gumb X zapre program ali okno."
+    },
+    {
+      "q": "Kje se nahajajo izbrisane datoteke?",
+      "a": [
+        "V košu",
+        "V mapi za slike",
+        "Ni jih več"
+      ],
+      "c": 0,
+      "e": "Koš začasno shrani izbrisane datoteke - vse dokler ga ne 'izprazniš'."
+    },
+    {
+      "q": "Kaj pomeni 'obnoviti datoteko (iz koša)'?",
+      "a": [
+        "Trajno izbrisati",
+        "Obnoviti izbrisano datoteko",
+        "Kopirati datoteko"
+      ],
+      "c": 1,
+      "e": "Obnova vrne datoteko nazaj na prvotno mesto. Vse 'pobrisane' datoteke se do dokončnega izbrisa nahajajo v košu."
+    },
+    {
+      "q": "Kaj pomeni, če je besedilo modro in podčrtano (recimo v e-pošti)?",
+      "a": [
+        "To je povezava (link)",
+        "To je napaka",
+        "To je naslov"
+      ],
+      "c": 0,
+      "e": "Modro podčrtano besedilo običajno pomeni povezavo na spletno stran."
+    },
+    {
+      "q": "Za kaj lahko uporabljaš Claude?",
+      "a": [
+        "Za pogovor in iskanje odgovorov",
+        "Za tiskanje dokumentov",
+        "Za popravilo računalnika"
+      ],
+      "c": 0,
+      "e": "Claude je orodje, ki odgovarja na vprašanja in pomaga pri različnih nalogah, podobno kot ChatGPT."
+    }
+  ]
+}
