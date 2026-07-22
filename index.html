@@ -180,7 +180,7 @@ body {
     transition: 0.3s;
 }
 
-#repeatBtn {
+#repeatBtn, #drugKvizBtn {
     font-size: 20px;
     padding: 10px 40px;
     border-radius: 8px;
@@ -188,8 +188,9 @@ body {
     background: var(--btn-repeat-bg);
     border: 1px solid var(--border-light);
     color: var(--text-primary);
+    margin: 6px;
 }
-#repeatBtn:hover {
+#repeatBtn:hover, #drugKvizBtn:hover {
     background: var(--btn-repeat-hover);
 }
 
@@ -425,6 +426,7 @@ h2 {
 #themeToggle:focus-visible,
 #soundToggle:focus-visible,
 #repeatBtn:focus-visible,
+#drugKvizBtn:focus-visible,
 .closeModal:focus-visible,
 #ime:focus-visible {
     outline: 3px solid var(--info-blue);
@@ -454,27 +456,6 @@ h2 {
     margin-top: 15px;
     padding: 12px;
     box-shadow: var(--shadow);
-}
-
-#quizZgodovina {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    text-align: left;
-    color: var(--text-secondary);
-}
-#quizZgodovina strong {
-    color: var(--text-primary);
-}
-#quizZgodovina ul {
-    margin: 6px 0 0 0;
-    padding-left: 20px;
-}
-#quizZgodovina li {
-    margin-bottom: 4px;
 }
 
 .encouragement {
@@ -580,8 +561,6 @@ h2 {
       </div>
 
       <div id="introStep1" style="display:none">
-        <div id="quizZgodovina" style="display:none"></div>
-
         <label for="ime">Vpiši svoje ime:</label>
         <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off">
         <button id="nextBtn" type="submit">➡️ Naprej</button>
@@ -653,53 +632,6 @@ let isGroupMode = false;
 
 // Google Sheet URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
-
-// ========== ZGODOVINA REŠENIH KVIZOV (shranjena LOKALNO na napravi uporabnika, prek localStorage) ==========
-// Opomba: ti podatki se NE pošiljajo nikamor - vidni so samo na tej napravi/brskalniku.
-// Če je več kviz-datotek objavljenih na isti spletni domeni, si delijo isto zgodovino (ker je localStorage vezan na domeno).
-
-function preberiZgodovinoKvizov() {
-    try {
-        const raw = localStorage.getItem("kvizZgodovina");
-        return raw ? JSON.parse(raw) : {};
-    } catch (e) {
-        return {};
-    }
-}
-
-function zabeleziKvizRezultat(ocena, pravilni, skupaj) {
-    const zgodovina = preberiZgodovinoKvizov();
-    const obstojeci = zgodovina[KVIZ_IME] || { stevilo: 0 };
-    zgodovina[KVIZ_IME] = {
-        stevilo: obstojeci.stevilo + 1,
-        zadnjaOcena: ocena,
-        zadnjiRezultat: `${pravilni}/${skupaj}`,
-        zadnjiDatum: new Date().toLocaleString()
-    };
-    try {
-        localStorage.setItem("kvizZgodovina", JSON.stringify(zgodovina));
-    } catch (e) {
-        // localStorage ni na voljo (npr. zasebno brskanje) - tiho prezri, kviz deluje naprej normalno
-    }
-}
-
-function prikaziZgodovinoKvizov() {
-    const zgodovina = preberiZgodovinoKvizov();
-    const kljuci = Object.keys(zgodovina);
-    const box = document.getElementById("quizZgodovina");
-    if (kljuci.length === 0) {
-        box.style.display = "none";
-        return;
-    }
-    let html = "<strong>📋 Tvoja zgodovina reševanja na tej napravi:</strong><ul>";
-    kljuci.forEach(ime => {
-        const zapis = zgodovina[ime];
-        html += `<li>${escapeHtml(ime)} — rešeno ${zapis.stevilo}x, zadnja ocena: ${zapis.zadnjaOcena} (${zapis.zadnjiRezultat}), ${zapis.zadnjiDatum}</li>`;
-    });
-    html += "</ul>";
-    box.innerHTML = html;
-    box.style.display = "block";
-}
 
 // Varnostna funkcija: pobegne HTML posebne znake, da uporabniško vneseno ime
 // (ki gre v innerHTML) ne more vsebovati in izvesti HTML/JS kode (XSS zaščita).
@@ -863,6 +795,10 @@ function handleIntroSubmit() {
             alert("Vpišite ime");
             return;
         }
+        // Opomba: ime se NAMENOMA ne shranjuje v localStorage (ne preživi zaprtja/osvežitve strani) -
+        // gre za skupne/učilniške računalnike, kjer bi se sicer naslednjemu tečajniku predizpolnilo
+        // ime prejšnjega. Znotraj ISTEGA obiska (ponovitev kviza, izbira drugega kviza) se ime ohrani
+        // samo zato, ker stran ni bila ponovno naložena - polje #ime preprosto ostane izpolnjeno.
         step1.style.display = "none";
         step2.style.display = "block";
     } else {
@@ -1033,9 +969,6 @@ function finishQuiz() {
     else if (percent < 0.85) grade = 4;
     else grade = 5;
     
-    // Zabeleži rezultat v lokalno zgodovino te naprave (za prikaz na uvodnem zaslonu ob naslednjem obisku)
-    zabeleziKvizRezultat(grade, score, questions.length);
-    
     let gradeText = "", gradeColor = "", gradeEmoji = "";
     if (grade == 5) { gradeText = "ODLIČNO (5)"; gradeColor = "#2ecc71"; gradeEmoji = "🏆"; }
     else if (grade == 4) { gradeText = "PRAV DOBRO (4)"; gradeColor = "#f39c12"; gradeEmoji = "🌟"; }
@@ -1092,6 +1025,7 @@ function finishQuiz() {
         document.getElementById("review").innerHTML = `
             <div style="color:var(--correct-green); font-size:24px; margin-bottom:20px;">🏆 BRAVO, VSE SI ODGOVORIL/A PRAVILNO! 🏆</div>
             <button id="repeatBtn" onclick="restartQuiz()">🔄 Želiš ponoviti kviz?</button>
+            <button id="drugKvizBtn" onclick="izberiDrugKviz()">📚 Izberi drug kviz</button>
         `;
         sendResult(score, questions.length, grade);
         return;
@@ -1116,6 +1050,7 @@ function finishQuiz() {
     });
     if (!hasWrong) reviewHtml = "<h2>🎉 Super! Vsi odgovori so pravilni.</h2>";
     reviewHtml += `<button id="repeatBtn" onclick="restartQuiz()">🔄 Želiš ponoviti kviz?</button>`;
+    reviewHtml += `<button id="drugKvizBtn" onclick="izberiDrugKviz()">📚 Izberi drug kviz</button>`;
     document.getElementById("review").innerHTML = reviewHtml;
     sendResult(score, questions.length, grade);
 }
@@ -1128,6 +1063,20 @@ function restartQuiz() {
     // Ime in izbrani način (skupina/posameznik) se OHRANITA - ni jih treba ponovno vnašati/izbirati.
     // startQuiz() ponovno prebere isto ime iz polja (ki ga nismo počistili) in ohrani isti isGroupMode.
     startQuiz();
+}
+
+function izberiDrugKviz() {
+    if (questionTimer) clearTimeout(questionTimer);
+    document.getElementById("finalResult").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("fileInfo").style.display = "block";
+    document.getElementById("avtorFooter").style.display = "block";
+    document.getElementById("intro").style.display = "flex";
+    // Ime OSTANE izpolnjeno (localStorage + polje #ime nista bila počiščena) - izbere se samo nov kviz
+    document.getElementById("introStep0").style.display = "block";
+    document.getElementById("introStep1").style.display = "none";
+    document.getElementById("introStep2").style.display = "none";
+    document.getElementById("kvizNaslov").innerText = "Izberi kviz";
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
@@ -1310,8 +1259,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     // Zgradi izbirnik kvizov, razvrščen po kategorijah
     zgradiIzbirnikKvizov();
-    // Prikaži zgodovino že rešenih kvizov na tej napravi (na uvodnem zaslonu)
-    prikaziZgodovinoKvizov();
 });
 
 // Opozorilo pred nenamernim zapiranjem zavihka med reševanjem kviza
