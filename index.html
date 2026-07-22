@@ -124,7 +124,8 @@ body {
     width: 100px;
     margin: 20px auto 0 auto;
     padding: 8px 16px;
-    background: var(--btn-hover);
+    background: #d0e7ff;
+    color: #1a1a2e;
     border: 1px solid var(--border-light);
     border-radius: 8px;
     cursor: pointer;
@@ -132,7 +133,7 @@ body {
     font-weight: bold;
 }
 .closeModal:hover {
-    background: var(--btn-repeat-hover);
+    background: #a9d4ff;
 }
 
 /* okvirček z imenom datoteke - spodaj pod uvodnim okvirjem */
@@ -211,7 +212,7 @@ h2 {
     padding: 25px 30px;
     border-radius: 10px;
     box-shadow: var(--shadow);
-    width: 900px;
+    width: 1200px;
     max-width: 90%;
     color: var(--text-primary);
 }
@@ -538,7 +539,7 @@ h2 {
             <li><strong>📚 Izbira kviza:</strong> Na samem začetku izbereš, katero od 5 tem želiš reševati - vprašanja se naložijo glede na tvojo izbiro.</li>
             <li><strong>🌙 Temni / ☀️ Svetli način:</strong> Z gumbom desno zgoraj lahko preklapljaš med temnim in svetlim ozadjem.</li>
             <li><strong>🔊 Izklop / vklop zvoka:</strong> Z gumbom pod njim lahko izklopiš ali vklopiš zvok ob odgovorih.</li>
-            <li><strong>⏱️ Samodejni premik:</strong> Po kliku na odgovor se kviz samodejno premakne na naslednje vprašanje po 15 sekundah. Lahko pa prej pritisneš <strong>presledek</strong> (najdaljša tipka) in greš takoj naprej.</li>
+            <li><strong>⏱️ Samodejni premik:</strong> Po kliku na odgovor se kviz samodejno premakne na naslednje vprašanje po 20 sekundah. Lahko pa prej pritisneš <strong>presledek</strong> (najdaljša tipka) in greš takoj naprej.</li>
             <li><strong>👤 Posamezno / 👥 Skupina:</strong> Pri "Posamezno" se odgovori pri vsakem vprašanju premešajo, kar je primerno, če kviz rešuje vsak zase. Pri "Skupina" ostanejo odgovori vedno v enakem vrstnem redu — priročno, če kviz skupaj rešujete ob projektorju, saj lahko vsi sledijo istim oznakam odgovorov.</li>
         </ul>
         <button class="closeModal">Zapri</button>
@@ -550,7 +551,8 @@ h2 {
     <h1>Osnove računalništva</h1>
     <div class="dobrodosliBesedilo">
       <p><strong>Dobrodošli!</strong></p>
-      <p>Ti kvizi so namenjeni utrjevanju znanja iz računalništva in umetne inteligence. Izberite temo in začnite reševati.</p>
+      <p>Kvizi so namenjeni utrjevanju znanja iz računalništva in umetne inteligence.</p>
+      <p>Izberite temo in začnite reševati.</p>
     </div>
     <h2 id="kvizNaslov">Izberi kviz</h2>
     <form onsubmit="handleIntroSubmit(); return false;">
@@ -589,16 +591,15 @@ h2 {
   </div>
 </div>
 
+<div class="avtorFooter" id="avtorFooter">
+    Avtor: Mario
+</div>
+
 <!-- okvirček z imenom datoteke - spodaj pod uvodnim okvirjem -->
 <div class="file-info" id="fileInfo">
     <div class="file-info-box">
-        Ustvarjeno z 🤖 Claude · v1.0
+        Ustvarjeno z 🤖 Claude Sonnet 5
     </div>
-</div>
-
-<div class="avtorFooter" id="avtorFooter">
-    Avtor: Mario<br>
-    Pripravljeno za izobraževanje odraslih in upokojencev.
 </div>
 
 <div id="quiz" style="display:none">
@@ -785,7 +786,7 @@ function handleIntroSubmit() {
             return;
         }
         vprasanjaPromise = naloziVprasanja(izbranKviz.datoteka);
-        document.getElementById("kvizNaslov").innerText = `Kviz: ${izbranKviz.naslov} - ${izbranKviz.id}`;
+        document.getElementById("kvizNaslov").innerText = `Kviz: ${izbranKviz.naslov}`;
         step0.style.display = "none";
         step1.style.display = "block";
     } else if (step2.style.display === "none") {
@@ -944,7 +945,7 @@ function checkAnswer(selectedIdx) {
     questionTimer = setTimeout(() => {
         explanationDiv.style.display = "none";
         nextQuestion();
-    }, 15000);
+    }, 20000);
 }
 
 function nextQuestion() {

@@ -119,7 +119,7 @@
         "Uporabniško sistemsko orodje"
       ],
       "c": 1,
-      "e": "USB (Universal serial bus: univerzalno serijsko vodilo) je standard za priklop naprav (miška, tipkovnica, USB ključ) na računalnik."
+      "e": "USB (Universal serial bus: univerzalno serijsko vodilo) je standard za priklop naprav (miška, tipkovnica, USB ključ) na računalnik s pomočjo ustreznega kabla."
     },
     {
       "q": "Kaj pomeni 'način za letalo' (Airplane mode) na telefonu?",
@@ -212,7 +212,7 @@
       "e": "Pametni telefon poleg klicanja omogoča brskanje po spletu, uporabo aplikacij, fotografiranje in še veliko več."
     },
     {
-      "q": "Kam naj shranjujem varnostne kopije?",
+      "q": "Kam praviloma shranjujemo varnostne kopije?",
       "a": [
         "Na isti disk kot izvirne podatke",
         "V koš",

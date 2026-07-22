@@ -42,14 +42,14 @@
       "e": "Deepfake s pomočjo UI zamenja obraz ali glas osebe tako, da posnetek izgleda oz. sliši se pristno, čeprav ni resničen."
     },
     {
-      "q": "Zakaj je pomembno preveriti, kaj ti UI pove, preden to deliš naprej?",
+      "q": "Kaj je 'Turingov test'?",
       "a": [
-        "Ni potrebno, UI se nikoli ne zmoti",
-        "Ker lahko UI poda napačne ali izmišljene informacije, ki zvenijo prepričljivo",
-        "Ker UI vedno namerno laže"
+        "Preizkus, pri katerem oseba v pogovoru ugotavlja, ali govori s človekom ali s strojem",
+        "Test hitrosti internetne povezave",
+        "Preizkus trdnosti računalniške strojne opreme"
       ],
-      "c": 1,
-      "e": "UI lahko samozavestno navede napačne podatke (t. i. 'halucinacije'), zato je preverjanje pomembnih informacij vedno smiselno."
+      "c": 0,
+      "e": "Turingov test preverja, ali stroj v pogovoru zna odgovarjati tako prepričljivo, da ga oseba ne more zanesljivo ločiti od človeka."
     },
     {
       "q": "Kaj so priporočilni algoritmi (npr. na YouTubu, Netflixu)?",
@@ -202,14 +202,14 @@
       "e": "Iskalnik ti pokaže seznam povezav do spletnih strani, pogovorni UI pa odgovor neposredno sestavi (in se pri tem lahko tudi zmoti)."
     },
     {
-      "q": "Ali je priporočljivo UI-ju zaupati končne finančne ali pravne odločitve brez posveta s strokovnjakom?",
+      "q": "Kaj je razlika med umetno inteligenco (UI) in navadnim računalniškim programom?",
       "a": [
-        "Da, UI je za to najbolj zanesljiva",
-        "Ne, za pomembne finančne/pravne odločitve je priporočljiv posvet s strokovnjakom",
-        "UI se na financah in pravu sploh ne spozna"
+        "Ni razlike, oboje dela popolnoma enako",
+        "Navaden program sledi vnaprej zapisanim pravilom, UI pa se iz podatkov nauči prepoznavati vzorce sama",
+        "UI je samo hitrejša različica navadnega programa"
       ],
       "c": 1,
-      "e": "UI lahko poda splošne informacije, a za pomembne finančne ali pravne odločitve je vedno priporočljivo posvetovanje s strokovnjakom."
+      "e": "Navaden program natančno sledi vnaprej zapisanim navodilom, medtem ko se UI iz velike količine podatkov sama nauči prepoznavati vzorce in se nanje odziva."
     },
     {
       "q": "Kaj pomeni, da UI orodje 'trenira' na velikih količinah podatkov?",
