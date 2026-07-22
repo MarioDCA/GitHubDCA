@@ -221,11 +221,6 @@ h2 {
     margin: 5px 0;
     color: var(--info-blue);
 }
-.introBox h2 {
-    margin: 5px 0 15px 0;
-    font-weight: normal;
-    color: var(--info-pink);
-}
 
 .introBox label {
     display: block;
@@ -246,10 +241,8 @@ h2 {
     color: var(--text-primary);
 }
 
-#introStep0 label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 10px;
+#introStep0 {
+    text-align: center;
 }
 #izbiraKviza {
     width: 320px;
@@ -262,6 +255,11 @@ h2 {
     background: var(--bg-card);
     color: var(--text-primary);
     cursor: pointer;
+    text-align: center;
+    text-align-last: center;
+}
+#izbiraKviza option {
+    text-align: center;
 }
 #izbiraKviza:focus-visible {
     outline: 3px solid var(--info-blue);
@@ -327,7 +325,7 @@ h2 {
     width: 100%;
     font-size: 16px;
     padding: 8px;
-    margin-top: 12px;
+    margin-top: 8px;
     border-radius: 8px;
     cursor: pointer;
     background: var(--bg-card);
@@ -554,12 +552,13 @@ h2 {
       <p>Kvizi so namenjeni utrjevanju znanja iz računalništva in umetne inteligence.</p>
       <p>Izberite temo in začnite reševati.</p>
     </div>
-    <h2 id="kvizNaslov">Izberi kviz</h2>
     <form onsubmit="handleIntroSubmit(); return false;">
       <div id="introStep0">
-        <label for="izbiraKviza">Izberi kviz:</label>
-        <select id="izbiraKviza"></select>
-        <button id="izberiKvizBtn" type="submit">➡️ Naprej</button>
+        <select id="izbiraKviza" onchange="document.getElementById('izberiKvizBtn').style.display='block';">
+          <option value="">-- Izberi kviz --</option>
+        </select>
+        <button id="izberiKvizBtn" type="submit" style="display:none;">➡️ Naprej</button>
+        <button id="infoBtn" type="button">ℹ️ Info</button>
       </div>
 
       <div id="introStep1" style="display:none">
@@ -572,7 +571,6 @@ h2 {
               🌟 <strong>Brez skrbi!</strong> Vsak klik je korak naprej.<br>
               Če česa ne veš, nič ne de – ob vsakem odgovoru dobiš prijazno razlago.
           </div>
-          <button id="infoBtn" type="button">ℹ️ Info</button>
         </div>
       </div>
 
@@ -668,7 +666,7 @@ const KVIZI = [
 
 function zgradiIzbirnikKvizov() {
     const select = document.getElementById("izbiraKviza");
-    select.innerHTML = "";
+    select.innerHTML = '<option value="">-- Izberi kviz --</option>';
     // Razvrsti kvize v kategorije, v vrstnem redu, kot se prvič pojavijo v seznamu KVIZI
     const kategorije = [];
     const poKategorijah = {};
@@ -780,13 +778,16 @@ function handleIntroSubmit() {
     if (step0.style.display !== "none") {
         // 0. korak: izbira kviza - takoj začni nalagati vprašanja v ozadju
         const izbiraSelect = document.getElementById("izbiraKviza");
+        if (!izbiraSelect.value) {
+            alert("Izberite kviz.");
+            return;
+        }
         izbranKviz = KVIZI.find(k => k.id === izbiraSelect.value);
         if (!izbranKviz) {
             alert("Izberite kviz.");
             return;
         }
         vprasanjaPromise = naloziVprasanja(izbranKviz.datoteka);
-        document.getElementById("kvizNaslov").innerText = `Kviz: ${izbranKviz.naslov}`;
         step0.style.display = "none";
         step1.style.display = "block";
     } else if (step2.style.display === "none") {
@@ -1077,7 +1078,9 @@ function izberiDrugKviz() {
     document.getElementById("introStep0").style.display = "block";
     document.getElementById("introStep1").style.display = "none";
     document.getElementById("introStep2").style.display = "none";
-    document.getElementById("kvizNaslov").innerText = "Izberi kviz";
+    // Ponastavi izbirnik in skrij gumb Naprej
+    document.getElementById("izbiraKviza").value = "";
+    document.getElementById("izberiKvizBtn").style.display = "none";
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
