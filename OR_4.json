@@ -29,7 +29,7 @@
         "Poseben tiskalnik"
       ],
       "c": 0,
-      "e": "Zaslon na dotik (običajno na tablici, telefonu) zazna dotik prsta ali pisala in tako nadomesti miško."
+      "e": "Zaslon na dotik zazna dotik prsta ali pisala in tako nadomesti miško."
     },
     {
       "q": "Kaj je Bluetooth?",
@@ -39,7 +39,7 @@
         "Program za urejanje slik"
       ],
       "c": 0,
-      "e": "Bluetooth omogoča brezžično povezavo med napravami na kratke razdalje, npr. slušalke, miško ali tipkovnico brez kabla."
+      "e": "Bluetooth omogoča brezžično povezavo med napravami na kratke razdalje, npr. slušalke ali tipkovnico brez kabla."
     },
     {
       "q": "Kako odpreš program?",
@@ -54,12 +54,12 @@
     {
       "q": "Za kaj se uporablja HDMI kabel?",
       "a": [
-        "Za povezavo računalnika z zunanjim zaslonom, projektorjem ali TV",
+        "Za povezavo računalnika z zunanjim zaslonom ali TV",
         "Za polnjenje baterije",
         "Za priklop miške"
       ],
       "c": 0,
-      "e": "HDMI kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem, projektorjem."
+      "e": "HDMI kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
     },
     {
       "q": "Kaj pomeni 'shrani datoteko'?",
@@ -99,7 +99,7 @@
         "Pod tipkovnico"
       ],
       "c": 0,
-      "e": "USB ključek vstaviš v USB režo (port) na računalniku - navadno na levi ali desni strani ali zadaj. Preveripri sebi!"
+      "e": "USB ključek vstaviš v USB režo (port) na računalniku - navadno na strani ali zadaj."
     },
     {
       "q": "Kako odpreš brskalnik?",
@@ -109,7 +109,7 @@
         "Odpreš mapo"
       ],
       "c": 0,
-      "e": "Ikona brskalnika je pogosto na namizju (odpre jo dvoklik z levo tipko) ali v opravilni vrstici spodaj (odpre jo en klik z levo tipko)."
+      "e": "Ikona brskalnika je pogosto na namizju ali v opravilni vrstici spodaj – en klik ali dvoklik."
     },
     {
       "q": "Kaj naredi bližnjica Ctrl+Z?",

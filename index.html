@@ -151,6 +151,29 @@ body {
     box-shadow: var(--shadow);
 }
 
+.dobrodosliBesedilo {
+    font-size: 15px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+.dobrodosliBesedilo p {
+    margin: 4px 0;
+}
+.dobrodosliBesedilo p strong {
+    color: var(--text-primary);
+    font-size: 18px;
+}
+
+.avtorFooter {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
 .highlightCorrect {
     box-shadow: 0 0 20px lime;
     transform: scale(1.025);
@@ -544,17 +567,15 @@ h2 {
 <div id="intro">
   <div class="introBox">
     <h1>Osnove računalništva</h1>
+    <div class="dobrodosliBesedilo">
+      <p><strong>Dobrodošli!</strong></p>
+      <p>Ti kvizi so namenjeni utrjevanju znanja iz računalništva in umetne inteligence. Izberite temo in začnite reševati.</p>
+    </div>
     <h2 id="kvizNaslov">Izberi kviz</h2>
     <form onsubmit="handleIntroSubmit(); return false;">
       <div id="introStep0">
         <label for="izbiraKviza">Izberi kviz:</label>
-        <select id="izbiraKviza">
-          <option value="1">1 – Osnovni računalniški pojmi</option>
-          <option value="2">2 – Osnove interneta in brskanja</option>
-          <option value="3">3 – Varnost na spletu</option>
-          <option value="4">4 – Strojna oprema in bližnjice</option>
-          <option value="5">5 – Sodobne aplikacije in naprave</option>
-        </select>
+        <select id="izbiraKviza"></select>
         <button id="izberiKvizBtn" type="submit">➡️ Naprej</button>
       </div>
 
@@ -592,8 +613,13 @@ h2 {
 <!-- okvirček z imenom datoteke - spodaj pod uvodnim okvirjem -->
 <div class="file-info" id="fileInfo">
     <div class="file-info-box">
-        index.html | Ustvarjeno z: 🤖 Claude
+        Ustvarjeno z 🤖 Claude · v1.0
     </div>
+</div>
+
+<div class="avtorFooter" id="avtorFooter">
+    Avtor: Mario<br>
+    Pripravljeno za izobraževanje odraslih in upokojencev.
 </div>
 
 <div id="quiz" style="display:none">
@@ -687,13 +713,51 @@ function escapeHtml(str) {
 }
 
 // ========== KONFIGURACIJA KVIZOV (vprašanja se naložijo dinamično iz JSON datotek) ==========
+// ========== SEZNAM VSEH KVIZOV ==========
+// Vsak kviz spada v neko kategorijo - izbirnik na uvodnem zaslonu se samodejno razvrsti po kategorijah.
+// Ko boš dodajal nove kvize (tudi nove kategorije), samo dodaj nov vnos spodaj - v HTML ni treba nič spreminjati.
 const KVIZI = [
-    {id: "1", ime: "OR_1.json", naslov: "Osnovni računalniški pojmi",       datoteka: "OR_1.json"},
-    {id: "2", ime: "OR_2.json", naslov: "Osnove interneta in brskanja",     datoteka: "OR_2.json"},
-    {id: "3", ime: "OR_3.json", naslov: "Varnost na spletu",                 datoteka: "OR_3.json"},
-    {id: "4", ime: "OR_4.json", naslov: "Strojna oprema in bližnjice",       datoteka: "OR_4.json"},
-    {id: "5", ime: "OR_5.json", naslov: "Sodobne aplikacije in naprave",     datoteka: "OR_5.json"}
+    {id: "OR_1", ime: "OR_1.json", naslov: "Osnovni računalniški pojmi",   datoteka: "OR_1.json", kategorija: "🖥️ Osnove računalništva"},
+    {id: "OR_2", ime: "OR_2.json", naslov: "Osnove interneta in brskanja", datoteka: "OR_2.json", kategorija: "🖥️ Osnove računalništva"},
+    {id: "OR_3", ime: "OR_3.json", naslov: "Varnost na spletu",           datoteka: "OR_3.json", kategorija: "🖥️ Osnove računalništva"},
+    {id: "OR_4", ime: "OR_4.json", naslov: "Strojna oprema in bližnjice", datoteka: "OR_4.json", kategorija: "🖥️ Osnove računalništva"},
+    {id: "OR_5", ime: "OR_5.json", naslov: "Sodobne aplikacije in naprave", datoteka: "OR_5.json", kategorija: "🖥️ Osnove računalništva"},
+
+    {id: "AI_1", ime: "AI_1.json", naslov: "Pravilna raba pozivov (promptov)", datoteka: "AI_1.json", kategorija: "🤖 ChatGPT"},
+    {id: "AI_2", ime: "AI_2.json", naslov: "Uporaba umetne inteligence",       datoteka: "AI_2.json", kategorija: "🤖 ChatGPT"}
+
+    // Prihodnje kategorije/kvize dodaj po enakem vzorcu, npr.:
+    // {id: "IV_1", ime: "IV_1.json", naslov: "...", datoteka: "IV_1.json", kategorija: "🌐 Internet in varnost"},
+    // {id: "EP_1", ime: "EP_1.json", naslov: "...", datoteka: "EP_1.json", kategorija: "📧 Elektronska pošta"},
+    // {id: "AN_1", ime: "AN_1.json", naslov: "...", datoteka: "AN_1.json", kategorija: "📱 Pametni telefoni Android"},
+    // {id: "W11_1", ime: "W11_1.json", naslov: "...", datoteka: "W11_1.json", kategorija: "💾 Windows 11"},
 ];
+
+function zgradiIzbirnikKvizov() {
+    const select = document.getElementById("izbiraKviza");
+    select.innerHTML = "";
+    // Razvrsti kvize v kategorije, v vrstnem redu, kot se prvič pojavijo v seznamu KVIZI
+    const kategorije = [];
+    const poKategorijah = {};
+    KVIZI.forEach(k => {
+        if (!poKategorijah[k.kategorija]) {
+            poKategorijah[k.kategorija] = [];
+            kategorije.push(k.kategorija);
+        }
+        poKategorijah[k.kategorija].push(k);
+    });
+    kategorije.forEach(kat => {
+        const optgroup = document.createElement("optgroup");
+        optgroup.label = kat;
+        poKategorijah[kat].forEach(k => {
+            const option = document.createElement("option");
+            option.value = k.id;
+            option.innerText = k.naslov;
+            optgroup.appendChild(option);
+        });
+        select.appendChild(optgroup);
+    });
+}
 
 let izbranKviz = null;      // izbran vnos iz KVIZI, glede na izbiro na uvodnem zaslonu
 let vprasanjaPromise = null; // Promise, ki se razreši v naloženo vsebino vprašanj (nalaga se v ozadju)
@@ -840,6 +904,7 @@ async function startQuiz() {
     
     document.getElementById("intro").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
+    document.getElementById("avtorFooter").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     
     currentQuestion = 0;
@@ -1059,6 +1124,7 @@ function restartQuiz() {
     if (questionTimer) clearTimeout(questionTimer);
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
+    document.getElementById("avtorFooter").style.display = "none";
     // Ime in izbrani način (skupina/posameznik) se OHRANITA - ni jih treba ponovno vnašati/izbirati.
     // startQuiz() ponovno prebere isto ime iz polja (ki ga nismo počistili) in ohrani isti isGroupMode.
     startQuiz();
@@ -1242,6 +1308,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!soundEnabled) {
         document.getElementById("soundToggle").innerHTML = "🔇 Zvok izklopljen";
     }
+    // Zgradi izbirnik kvizov, razvrščen po kategorijah
+    zgradiIzbirnikKvizov();
     // Prikaži zgodovino že rešenih kvizov na tej napravi (na uvodnem zaslonu)
     prikaziZgodovinoKvizov();
 });

@@ -1,0 +1,255 @@
+{
+  "naslov": "Kviz ChatGPT 1 - pravilna raba pozivov (promptov)",
+  "vprasanja": [
+    {
+      "q": "Katero vprašanje je najboljše?",
+      "a": [
+        "Napiši nekaj o zdravju",
+        "Povej mi o zdravju",
+        "Napiši 5 nasvetov za zdravo življenje za starejše od 60 let"
+      ],
+      "c": 2,
+      "e": "Bolj natančno in konkretno vprašanje da boljši, bolj uporaben rezultat."
+    },
+    {
+      "q": "Zakaj je vprašanje za UI (npr. ChatGPT) slabo: 'Povej mi nekaj o hrani.'?",
+      "a": [
+        "Ker UI ne ve, kaj želim z informacijo narediti – ali želim recept, zgodovino, prehranski nasvet ali zanimivost.",
+        "Ker UI ne razume besede 'hrana' – to je preveč abstrakten pojem.",
+        "Ker je vprašanje prekratko – UI potrebuje vsaj 10 besed za dober odgovor."
+      ],
+      "c": 0,
+      "e": "Vprašanje ima vse tri napake: je prekratko, nejasno in brez cilja."
+    },
+    {
+      "q": "Katero vprašanje bo dalo najboljši rezultat?",
+      "a": [
+        "Napiši mail",
+        "Napiši uradni e-mail za reklamacijo izdelka",
+        "Napiši vljuden uradni e-mail za reklamacijo pokvarjenega sesalca, do 120 besed"
+      ],
+      "c": 2,
+      "e": "Več podrobnosti pomeni boljši odgovor."
+    },
+    {
+      "q": "Ali ChatGPT vedno pove resnico?",
+      "a": [
+        "Da, vedno",
+        "Ne, lahko naredi napake ali si kaj izmisli",
+        "Samo kadar gre za matematiko"
+      ],
+      "c": 1,
+      "e": "ChatGPT lahko naredi napake ali samozavestno poda napačen odgovor, zato je pomembno preverjati pomembne informacije."
+    },
+    {
+      "q": "Kaj pomaga dobiti boljši odgovor od ChatGPT?",
+      "a": [
+        "Več podrobnosti",
+        "Jasen cilj",
+        "Tako več podrobnosti kot jasen cilj"
+      ],
+      "c": 2,
+      "e": "Najboljši rezultati pridejo, ko združiš jasnost in podrobnosti."
+    },
+    {
+      "q": "Kaj mora vsebovati dober prompt (vprašanje), če želiš od ChatGPT uporaben jedilnik?",
+      "a": [
+        "Samo ime ene jedi",
+        "Samo število obrokov na dan",
+        "Za koga je namenjen, katere sestavine imaš na voljo in za koliko dni"
+      ],
+      "c": 2,
+      "e": "Dober prompt združi vse pomembne podrobnosti hkrati – brez katerekoli od njih je odgovor manj uporaben."
+    },
+    {
+      "q": "Katero vprašanje je boljše?",
+      "a": [
+        "Kako trenirati",
+        "Kaj naj 60-letnik počne za boljše počutje",
+        "Oba sta enaka"
+      ],
+      "c": 1,
+      "e": "Drugo je bolj natančno in uporabno."
+    },
+    {
+      "q": "Kaj je pomembnejše pri dobrem promptu (vprašanju) – dolžina ali jasnost?",
+      "a": [
+        "Dolžina – daljši prompt (daljše vprašanje) je vedno boljši",
+        "Jasnost – kratko in jasno navodilo pogosto zadošča",
+        "Ni pomembno niti eno niti drugo"
+      ],
+      "c": 1,
+      "e": "Ni pomembna dolžina besedila, ampak to, da je navodilo jasno in razumljivo."
+    },
+    {
+      "q": "Ali je ChatGPT enako zanesljiv pri zahtevnejših matematičnih izračunih kot pri pisanju besedil?",
+      "a": [
+        "Da, matematika mu ne dela nikakršnih težav",
+        "Ne, pri zahtevnejših izračunih se lahko zmoti",
+        "Ne, matematike sploh ne razume"
+      ],
+      "c": 1,
+      "e": "ChatGPT je jezikovni model, ne kalkulator, zato se pri zahtevnejših ali dolgih izračunih lahko zmoti."
+    },
+    {
+      "q": "Kaj narediš, če odgovor ni dober ali je preveč splošen?",
+      "a": [
+        "Nehaš in obupaš",
+        "Postaviš bolj natančno vprašanje",
+        "Kregaš se s ChatGPT"
+      ],
+      "c": 1,
+      "e": "Ključ je izboljšati in bolj natančno zastaviti vprašanje, ne obupati ali ponavljati iste napake."
+    },
+    {
+      "q": "Ali ChatGPT (v novejših različicah) lahko 'prebere' in opiše sliko, ki mu jo pošlješ?",
+      "a": [
+        "Da, to zna",
+        "Ne, tega ne zna nikoli",
+        "Samo če je slika črno-bela"
+      ],
+      "c": 0,
+      "e": "Novejše različice ChatGPT znajo analizirati tudi slike, ne le besedila."
+    },
+    {
+      "q": "Ali lahko ChatGPT pomaga pri učenju?",
+      "a": [
+        "Ne",
+        "Da",
+        "Samo za računalnike"
+      ],
+      "c": 1,
+      "e": "Uporaben je za razlage, primere in vaje, torej tudi za učenje."
+    },
+    {
+      "q": "Kaj je pogosta napaka uporabnikov?",
+      "a": [
+        "Preveč splošna vprašanja",
+        "Ne preverijo odgovora",
+        "Oboje"
+      ],
+      "c": 2,
+      "e": "Obe napaki sta zelo pogosti."
+    },
+    {
+      "q": "Katero vprašanje je boljše?",
+      "a": [
+        "Razloži internet",
+        "Razloži internet na enostaven način za začetnika",
+        "Oba sta enaka"
+      ],
+      "c": 1,
+      "e": "Prilagoditev nivoju razumevanja je ključna."
+    },
+    {
+      "q": "Preden zaupaš pomembnemu podatku, ki ti ga poda ChatGPT (npr. o zdravju ali financah), je najbolje, da:",
+      "a": [
+        "ga brez pomisleka sprejmeš, ker je ChatGPT zanesljiv",
+        "ga preveriš še pri drugem viru ali strokovnjaku",
+        "isto vprašanje samo še enkrat ponoviš"
+      ],
+      "c": 1,
+      "e": "Pri pomembnih odločitvah je vedno pametno preveriti informacijo še pri zanesljivem dodatnem viru."
+    },
+    {
+      "q": "Kaj je glavna napaka v ukazu: 'Razloži mi vse o zdravju'?",
+      "a": [
+        "Prekratek",
+        "Preširok",
+        "Predolg"
+      ],
+      "c": 1,
+      "e": "Vprašanje je preširoko, zato odgovor ne more biti konkreten."
+    },
+    {
+      "q": "Kateri ukaz bolje izkoristi ChatGPT?",
+      "a": [
+        "Napiši zgodbo",
+        "Napiši kratko zgodbo",
+        "Napiši kratko zgodbo (max 150 besed) o upokojencu, ki začne trenirati, v motivacijskem tonu"
+      ],
+      "c": 2,
+      "e": "Dodatne omejitve in stil izboljšajo rezultat."
+    },
+    {
+      "q": "Ali ti lahko ChatGPT zanesljivo pove točno vremensko napoved za jutri v tvojem kraju?",
+      "a": [
+        "Da, vedno natančno",
+        "Navadno ne, ker nima dostopa do sprotnih podatkov v živo",
+        "Da, a samo poleti"
+      ],
+      "c": 1,
+      "e": "ChatGPT-jevo znanje ni sprotno posodobljeno in navadno nima dostopa do podatkov v realnem času, kot je vreme."
+    },
+    {
+      "q": "Kaj pomeni, če ChatGPT 'halucinira'?",
+      "a": [
+        "Da se šali",
+        "Da si izmisli napačne informacije",
+        "Da ne odgovori"
+      ],
+      "c": 1,
+      "e": "ChatGPT lahko samozavestno poda napačne podatke."
+    },
+    {
+      "q": "Kaj je najboljša uporaba ChatGPT?",
+      "a": [
+        "Da razmišlja namesto tebe",
+        "Da ti pomaga razmišljati",
+        "Da vedno poda končni odgovor"
+      ],
+      "c": 1,
+      "e": "Največja vrednost je pomoč pri razmišljanju."
+    },
+    {
+      "q": "Kateri ukaz je boljši?",
+      "a": [
+        "Napiši oglas",
+        "Napiši oglas za prodajo kolesa",
+        "Napiši kratek oglas za prodajo rabljenega gorskega kolesa, poudari dobro ohranjenost in nizko ceno"
+      ],
+      "c": 2,
+      "e": "Podrobnosti = boljši rezultat."
+    },
+    {
+      "q": "Kaj narediš, če ne razumeš odgovora?",
+      "a": [
+        "Ga ignoriraš",
+        "Prosiš za enostavnejšo razlago",
+        "Obupaš"
+      ],
+      "c": 1,
+      "e": "Vedno lahko zahtevaš poenostavitev."
+    },
+    {
+      "q": "Kateri ukaz je boljši?",
+      "a": [
+        "Kako investirati denar",
+        "Kako varno investirati denar",
+        "Razloži osnovne načine varnega investiranja za začetnika, brez tveganih strategij"
+      ],
+      "c": 2,
+      "e": "Pomembno je določiti nivo znanja in tveganje."
+    },
+    {
+      "q": "Kaj od naštetega NI pametno deliti s ChatGPT-jem?",
+      "a": [
+        "Splošno vprašanje o receptu za kosilo",
+        "Svoje geslo ali številko bančne kartice",
+        "Prošnjo za razlago nekega pojma"
+      ],
+      "c": 1,
+      "e": "ChatGPT-ju ne zaupaj občutljivih osebnih podatkov (gesla, številke kartic ipd.), saj ne moreš biti popolnoma prepričan, kako in kje se taki podatki hranijo."
+    },
+    {
+      "q": "Kateri ukaz je boljši za rešitev problema?",
+      "a": [
+        "Pomagaj mi",
+        "Pomagaj mi rešiti problem",
+        "Pomagaj mi rešiti problem z računalnikom: ne prižge se, ventilator dela, zaslon je črn"
+      ],
+      "c": 2,
+      "e": "Opis problema je ključen."
+    }
+  ]
+}

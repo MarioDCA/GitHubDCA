@@ -49,8 +49,8 @@
         "Programska oprema"
       ],
       "c": 0,
-      "e": "Wi-Fi je tehnologija za brezžični prenos podatkov med napravami. Omogoča, da se računalnik, telefon, tablica, televizor ali druga naprava poveže z internetom ali z domačim omrežjem brez kabla."
-    }, 
+      "e": "Wi-Fi pomeni “Wireless Fidelity”, kar v praksi pomeni brezžična povezava med napravami."
+    },
     {
       "q": "Kaj je geslo?",
       "a": [
@@ -69,7 +69,7 @@
         "M4riBor!72"
       ],
       "c": 2,
-      "e": "Močno geslo vsebuje velike in male črke (Aa), številke (012) in posebne znake (;:,)."
+      "e": "Močno geslo vsebuje velike in male črke, številke in posebne znake."
     },
     {
       "q": "Kaj pomeni e-pošta?",
@@ -109,7 +109,7 @@
         "Gosenica"
       ],
       "c": 0,
-      "e": "Google je iskalnik, ki pomaga najti informacije na internetu."
+      "e": "Google pomaga najti informacije na internetu."
     },
     {
       "q": "Kaj pomeni klik?",
@@ -149,7 +149,7 @@
         "Operacijska miza"
       ],
       "c": 0,
-      "e": "Operacijski sistem omogoča delovanje računalnika in programov ter komunikacijo z zunanjimi enotami (zaslon, tiskalnik...)."
+      "e": "Operacijski sistem omogoča delovanje računalnika in programov."
     },
     {
       "q": "Kaj je datoteka?",
@@ -189,7 +189,7 @@
         "Odpreti datoteko"
       ],
       "c": 1,
-      "e": "Ko datoteko izbrišemo, torej odstranimo, jo običajno premaknemo v koš."
+      "e": "Ko datoteko izbrišemo, jo odstranimo iz računalnika."
     },
     {
       "q": "Kaj je namizje (desktop)?",
@@ -229,7 +229,7 @@
         "Izklop računalnika"
       ],
       "c": 1,
-      "e": "Posodobitev izboljša program in odpravi napake, lahko doda nove funkcije."
+      "e": "Posodobitev izboljša program in odpravi napake ali doda nove funkcije."
     },
     {
       "q": "Kaj je tiskalnik?",

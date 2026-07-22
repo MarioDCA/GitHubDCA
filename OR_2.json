@@ -79,7 +79,7 @@
         "Vrsta kabla"
       ],
       "c": 0,
-      "e": "Program je programska oprema - koda, ki omogoča izvajanje različnih nalog, npr. pisanje, računanje ali brskanje po spletu."
+      "e": "Program je programska oprema, ki omogoča izvajanje različnih nalog, npr. pisanje, računanje ali brskanje po spletu."
     },
     {
       "q": "Kaj je aplikacija (app)?",
@@ -99,10 +99,10 @@
         "Premakniti datoteko"
       ],
       "c": 1,
-      "e": "Ko odpreš datoteko, vidiš njeno vsebino: lahko je slika, tekst, glasba..."
+      "e": "Ko odpreš datoteko, vidiš njeno vsebino."
     },
     {
-      "q": "Kaj pomeni 'prenesti' datoteko (download)?",
+      "q": "Kaj pomeni 'prenesti datoteko (download)'?",
       "a": [
         "Poslati datoteko",
         "Shraniti datoteko s spleta",
@@ -112,7 +112,7 @@
       "e": "Prenos pomeni, da datoteko iz spleta shraniš na računalnik."
     },
     {
-      "q": "Kaj pomeni 'naložiti' datoteko (upload)?",
+      "q": "Kaj pomeni 'naložiti datoteko (upload)'?",
       "a": [
         "Poslati datoteko na splet",
         "Izbrisati datoteko",
@@ -159,7 +159,7 @@
         "Zmanjšaš glasnost"
       ],
       "c": 0,
-      "e": "Velikost besedila lahko povečaš v nastavitvah ali s povečevanjem (zoom), v brskalniku s kombinacijo tipk CTRL in +. Kombinacija deluje tudi v nekaterih programih."
+      "e": "Velikost besedila lahko povečaš v nastavitvah ali s povečevanjem (zoom), v brskalniku s kombinacijo tipk CTRL in +."
     },
     {
       "q": "Kaj se zgodi, če nimaš povezave na splet?",
@@ -189,7 +189,7 @@
         "Izbrisati datoteko"
       ],
       "c": 0,
-      "e": "Prilepiti pomeni, da vstaviš tisto, kar si prej kopiral ali izrezal. Pogosto se to izvaja s pomočjo bližnjice CTRL+C (Copy: kopiraj) in za tem CTRL+V (paste: prilepi)"
+      "e": "Prilepiti pomeni, da vstaviš tisto, kar si prej kopiral ali izrezal."
     },
     {
       "q": "Kaj pomeni 'izrezati datoteko'?",
@@ -199,7 +199,7 @@
         "Odpreti datoteko"
       ],
       "c": 1,
-      "e": "Izrez pomeni, da datoteko premakneš na drugo mesto, to pomeni, da je na izvirnem mestu (mapi) več ni."
+      "e": "Izrez pomeni, da datoteko premakneš na drugo mesto."
     },
     {
       "q": "Kaj pomeni, če klikneš na 'X' v programu?",
@@ -219,10 +219,10 @@
         "Ni jih več"
       ],
       "c": 0,
-      "e": "Koš začasno shrani vse 'izbrisane' datoteke - vse dokler ga ne 'izprazniš'."
+      "e": "Koš začasno shrani izbrisane datoteke - vse dokler ga ne 'izprazniš'."
     },
     {
-      "q": "Kaj pomeni 'obnoviti' datoteko (iz koša)?",
+      "q": "Kaj pomeni 'obnoviti datoteko (iz koša)'?",
       "a": [
         "Trajno izbrisati",
         "Obnoviti izbrisano datoteko",
@@ -232,7 +232,7 @@
       "e": "Obnova vrne datoteko nazaj na prvotno mesto. Vse 'pobrisane' datoteke se do dokončnega izbrisa nahajajo v košu."
     },
     {
-      "q": "Kaj pomeni, če je besedilo modro obarvano in podčrtano (recimo v e-pošti)?",
+      "q": "Kaj pomeni, če je besedilo modro in podčrtano (recimo v e-pošti)?",
       "a": [
         "To je povezava (link)",
         "To je napaka",

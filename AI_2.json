@@ -1,0 +1,255 @@
+{
+  "naslov": "Kviz ChatGPT 2 - uporaba umetne inteligence",
+  "vprasanja": [
+    {
+      "q": "Kaj je umetna inteligenca (UI)?",
+      "a": [
+        "Robot, ki misli popolnoma enako kot človek",
+        "Računalniški sistem, ki posnema določene človeške sposobnosti (npr. razumevanje jezika, prepoznavanje vzorcev)",
+        "Program, ki je pameten kot cel svet naenkrat"
+      ],
+      "c": 1,
+      "e": "UI je splošen izraz za sisteme, ki opravljajo naloge, za katere je običajno potrebna človeška inteligenca - to še ni isto kot zavesten robot iz filmov."
+    },
+    {
+      "q": "Kaj v osnovi počne orodje, kot je ChatGPT ali Claude?",
+      "a": [
+        "Išče po internetu, kot to počne Google",
+        "Generira besedilo na podlagi vzorcev, ki se jih je naučilo iz ogromne količine podatkov",
+        "Prepiše obstoječe besedilo z interneta"
+      ],
+      "c": 1,
+      "e": "Jezikovni model ne 'išče' po spletu v živo (razen če ima to posebej omogočeno), ampak besedilo sestavi na podlagi naučenih jezikovnih vzorcev."
+    },
+    {
+      "q": "Ali je vsaka UI aplikacija enaka?",
+      "a": [
+        "Da, vse delujejo popolnoma enako",
+        "Ne, obstajajo različne vrste - za pisanje besedil, ustvarjanje slik, prevajanje, prepoznavanje govora ...",
+        "Ne, obstaja samo ena UI aplikacija na svetu"
+      ],
+      "c": 1,
+      "e": "UI je širok pojem - obstajajo orodja za pisanje, slikanje, prevajanje, glasovne pomočnike in še veliko drugega, vsako prilagojeno svoji nalogi."
+    },
+    {
+      "q": "Kaj je 'deepfake'?",
+      "a": [
+        "Vrsta računalniškega virusa",
+        "Z UI ustvarjen ponarejen video ali slika, ki izgleda pristno",
+        "Okvara zaslona"
+      ],
+      "c": 1,
+      "e": "Deepfake s pomočjo UI zamenja obraz ali glas osebe tako, da posnetek izgleda oz. sliši se pristno, čeprav ni resničen."
+    },
+    {
+      "q": "Zakaj je pomembno preveriti, kaj ti UI pove, preden to deliš naprej?",
+      "a": [
+        "Ni potrebno, UI se nikoli ne zmoti",
+        "Ker lahko UI poda napačne ali izmišljene informacije, ki zvenijo prepričljivo",
+        "Ker UI vedno namerno laže"
+      ],
+      "c": 1,
+      "e": "UI lahko samozavestno navede napačne podatke (t. i. 'halucinacije'), zato je preverjanje pomembnih informacij vedno smiselno."
+    },
+    {
+      "q": "Kaj so priporočilni algoritmi (npr. na YouTubu, Netflixu)?",
+      "a": [
+        "Naključno izbrane vsebine",
+        "UI sistemi, ki ti glede na pretekle izbire predlagajo vsebine, ki bi ti bile všeč",
+        "Oglaševalske akcije podjetij"
+      ],
+      "c": 1,
+      "e": "Priporočilni algoritmi analizirajo tvoje pretekle izbire in ti na podlagi tega predlagajo podobne vsebine."
+    },
+    {
+      "q": "Ali lahko UI ustvarja slike iz besedilnega opisa?",
+      "a": [
+        "Ne, to zna samo profesionalen fotograf",
+        "Da, obstajajo orodja, ki iz besedilnega opisa ustvarijo popolnoma nove slike",
+        "Samo če opis vsebuje matematične formule"
+      ],
+      "c": 1,
+      "e": "Orodja za generiranje slik iz besedila znajo na podlagi opisa ('poziva') ustvariti povsem nove slike."
+    },
+    {
+      "q": "Kaj pomeni, da ima UI lahko 'pristranskost' (bias)?",
+      "a": [
+        "Da ima UI svoje osebno mnenje, tako kot človek",
+        "Da lahko UI nezavedno ponovi neenakosti ali stereotipe iz podatkov, na katerih se je učila",
+        "Da UI vedno podpira eno politično stran"
+      ],
+      "c": 1,
+      "e": "Če so podatki, na katerih se je UI učila, vsebovali neenakosti ali stereotipe, jih lahko UI nehote ponovi v svojih odgovorih."
+    },
+    {
+      "q": "Ali glasovni pomočniki (npr. Siri, Google Assistant, Alexa) uporabljajo UI?",
+      "a": [
+        "Ne, delujejo samo na vnaprej posnetih odgovorih",
+        "Da, uporabljajo UI za razumevanje govora in oblikovanje odgovorov",
+        "Ne, to je navadna telefonija"
+      ],
+      "c": 1,
+      "e": "Glasovni pomočniki uporabljajo UI za prepoznavanje govora, razumevanje vprašanj in oblikovanje odgovorov."
+    },
+    {
+      "q": "Ali je uporaba UI za pisanje šolske ali službene naloge lahko sporna?",
+      "a": [
+        "Nikoli, UI lahko vedno uporabiš brez kakršnihkoli omejitev",
+        "Da, če ustanova prepoveduje ali zahteva navedbo uporabe UI, gre lahko za kršitev pravil",
+        "UI se v šoli in službi ne sme nikoli uporabljati"
+      ],
+      "c": 1,
+      "e": "Mnoge šole in podjetja imajo svoja pravila o uporabi UI - vedno je pametno preveriti in upoštevati veljavna navodila."
+    },
+    {
+      "q": "Kaj je strojno prevajanje (npr. Google Prevajalnik)?",
+      "a": [
+        "Uporaba UI za samodejno prevajanje besedila med jeziki",
+        "Ročno prevajanje, ki ga opravi prevajalec",
+        "Prevajanje, ki deluje samo iz angleščine v slovenščino"
+      ],
+      "c": 0,
+      "e": "Strojno prevajanje uporablja UI za samodejno prevajanje med skoraj poljubnima jezikoma."
+    },
+    {
+      "q": "Ali lahko UI v celoti nadomesti človeško presojo pri pomembnih odločitvah (npr. zdravstvenih, pravnih)?",
+      "a": [
+        "Da, UI je pri tem vedno bolj zanesljiva kot človek",
+        "Ne, UI je lahko v pomoč, a končno odločitev naj sprejme usposobljena oseba",
+        "UI se na teh področjih sploh ne uporablja"
+      ],
+      "c": 1,
+      "e": "UI lahko pomaga pri analizi in predlogih, a za pomembne odločitve je še vedno priporočljiva človeška presoja in strokovno mnenje."
+    },
+    {
+      "q": "Samovozeči avtomobili so primer uporabe UI za kaj?",
+      "a": [
+        "Zaznavanje okolice in sprejemanje voznih odločitev",
+        "Navadne avtomobile z vgrajenim GPS-om",
+        "Avtomobile na daljinsko upravljanje"
+      ],
+      "c": 0,
+      "e": "Samovozeči avtomobili uporabljajo UI (senzorje, kamere in algoritme) za zaznavanje okolice in samostojno vožnjo."
+    },
+    {
+      "q": "Ali lahko UI vpliva na delovna mesta ljudi?",
+      "a": [
+        "Ne, UI nikakor ne vpliva na zaposlovanje",
+        "Da, nekatera ponavljajoča se opravila lahko avtomatizira, hkrati pa lahko ustvari tudi nova delovna mesta",
+        "UI lahko samo ustvarja nova delovna mesta, nikoli jih ne ukinja"
+      ],
+      "c": 1,
+      "e": "UI lahko avtomatizira nekatera opravila, hkrati pa ustvarja povpraševanje po novih znanjih in delovnih mestih."
+    },
+    {
+      "q": "Kaj pomeni, da je UI orodje (npr. ChatGPT, Claude) 'generativno'?",
+      "a": [
+        "Da samo prepiše obstoječe besedilo z interneta",
+        "Da ustvarja novo vsebino (besedilo, slike ...) na podlagi naučenih vzorcev",
+        "Da generira zgolj naključne znake"
+      ],
+      "c": 1,
+      "e": "Generativna UI ustvarja novo, izvirno vsebino na podlagi vzorcev, naučenih med treniranjem, ne zgolj kopira obstoječega."
+    },
+    {
+      "q": "Ali je vsebina, ki jo ustvari UI, avtomatsko brez avtorskih pravic?",
+      "a": [
+        "Da, UI vsebina nikoli nima avtorskih pravic",
+        "Vprašanje avtorskih pravic UI vsebine je odvisno od pravil in se šele razvija - ni enoznačnega odgovora",
+        "Avtorske pravice vedno pripadajo UI podjetju"
+      ],
+      "c": 1,
+      "e": "Zakonodaja o avtorskih pravicah UI vsebine se šele razvija in se razlikuje med državami, zato enotnega, preprostega odgovora (še) ni."
+    },
+    {
+      "q": "Kaj je 'klepetalni robot' (chatbot) na spletni strani podjetja?",
+      "a": [
+        "Oseba, ki se pretvarja, da je robot",
+        "UI program, ki avtomatsko odgovarja na vprašanja strank",
+        "Posebna vrsta e-pošte"
+      ],
+      "c": 1,
+      "e": "Klepetalni roboti na spletnih straneh uporabljajo UI za avtomatsko odgovarjanje na pogosta vprašanja strank."
+    },
+    {
+      "q": "Ali lahko UI 'razume' čustva tako kot človek?",
+      "a": [
+        "Da, popolnoma enako kot človek",
+        "Ne, UI lahko prepozna vzorce, povezane s čustvi, a jih dejansko ne 'čuti'",
+        "UI čustev sploh ne prepozna"
+      ],
+      "c": 1,
+      "e": "UI lahko analizira besedilo ali ton glasu in prepozna vzorce, povezane s čustvi, vendar sama nima resničnih občutkov."
+    },
+    {
+      "q": "Zakaj je smiselno UI orodja najprej preizkusiti na manj pomembnih nalogah?",
+      "a": [
+        "Ni smiselno, UI je vedno zanesljiva takoj",
+        "Da spoznaš, kako orodje deluje in kje so njegove omejitve",
+        "Ker UI orodja po prvi uporabi prenehajo delovati"
+      ],
+      "c": 1,
+      "e": "Preizkušanje na manj pomembnih nalogah ti pomaga spoznati zmogljivosti in omejitve orodja, preden se nanj zaneseš pri pomembnejših stvareh."
+    },
+    {
+      "q": "Kaj je ena glavnih razlik med iskalnikom (Google) in pogovornim UI orodjem (ChatGPT, Claude)?",
+      "a": [
+        "Ni razlike, delujeta popolnoma enako",
+        "Iskalnik pokaže povezave do virov, pogovorni UI pa sestavi odgovor na podlagi naučenega znanja",
+        "Iskalnik uporablja UI, pogovorni UI pa ne"
+      ],
+      "c": 1,
+      "e": "Iskalnik ti pokaže seznam povezav do spletnih strani, pogovorni UI pa odgovor neposredno sestavi (in se pri tem lahko tudi zmoti)."
+    },
+    {
+      "q": "Ali je priporočljivo UI-ju zaupati končne finančne ali pravne odločitve brez posveta s strokovnjakom?",
+      "a": [
+        "Da, UI je za to najbolj zanesljiva",
+        "Ne, za pomembne finančne/pravne odločitve je priporočljiv posvet s strokovnjakom",
+        "UI se na financah in pravu sploh ne spozna"
+      ],
+      "c": 1,
+      "e": "UI lahko poda splošne informacije, a za pomembne finančne ali pravne odločitve je vedno priporočljivo posvetovanje s strokovnjakom."
+    },
+    {
+      "q": "Kaj pomeni, da UI orodje 'trenira' na velikih količinah podatkov?",
+      "a": [
+        "Da se telesno pripravlja na tekmovanje",
+        "Da se iz velike količine besedil/podatkov nauči jezikovnih vzorcev in znanja",
+        "Da se vsak dan znova namesti na računalnik"
+      ],
+      "c": 1,
+      "e": "Treniranje pomeni, da model med razvojem analizira ogromne količine podatkov in se iz njih nauči prepoznavati vzorce."
+    },
+    {
+      "q": "Ali imajo vsi ljudje enak dostop do najnovejših UI orodij?",
+      "a": [
+        "Da, popolnoma enak dostop imajo vsi na svetu",
+        "Ne, dostop je lahko odvisen od cene, jezika, naprave ali internetne povezave",
+        "Da, UI orodja so vedno brezplačna za vse"
+      ],
+      "c": 1,
+      "e": "Dostop do UI orodij se lahko razlikuje glede na finančne zmožnosti, razpoložljivost v določenem jeziku, napravo ali internetno povezavo."
+    },
+    {
+      "q": "Zakaj je koristno UI orodjem dati povratno informacijo (npr. palec gor/dol na odgovor)?",
+      "a": [
+        "Ni koristno, povratne informacije se ne uporabljajo",
+        "Pomaga razvijalcem izboljševati kakovost in varnost orodja",
+        "Povratna informacija takoj izbriše UI orodje"
+      ],
+      "c": 1,
+      "e": "Povratne informacije uporabnikov razvijalcem pomagajo prepoznati napake in izboljšati delovanje ter varnost orodja."
+    },
+    {
+      "q": "Kaj je dober splošen pristop pri uporabi UI orodij v vsakdanjem življenju?",
+      "a": [
+        "Zaupati vsemu, kar UI pove, brez razmisleka",
+        "Uporabljati jih kot pomoč, a ohraniti lastno kritično presojo",
+        "Popolnoma se jim izogibati"
+      ],
+      "c": 1,
+      "e": "UI orodja so lahko zelo koristna pomoč, a najbolje delujejo v kombinaciji z lastnim razmislekom in kritično presojo uporabnika."
+    }
+  ]
+}
