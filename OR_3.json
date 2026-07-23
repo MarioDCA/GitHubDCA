@@ -116,11 +116,11 @@
       "e": "SMS sporočila s povezavami so pogost način prevar."
     },
     {
-      "q": "Kaj narediš, če želiš poslati posnetek zaslona?",
-      "a": ["Pripneš ga v e-pošto", "Izbrišeš ga", "Zapreš program"],
+      "q": "Kaj pomeni 'zaščita z geslom'?",
+      "a": ["Omejitev dostopa do naprave ali računa s skrivno besedo", "Namestitev protivirusnega programa", "Varnostno kopiranje podatkov"],
       "c": 0,
-      "e": "Pošlješ ga kot priponko."
-    },
+      "e": "Zaščita z geslom pomeni, da samo tisti, ki pozna geslo, lahko dostopa do naprave, računa ali datotek - to je osnovna in najpomembnejša varnostna mera."
+    },   
     {
       "q": "Kaj pomeni 'iskati po sliki'?",
       "a": ["Uporabiti sliko za iskanje informacij", "Izbrisati sliko", "Shrani sliko"],
