@@ -387,6 +387,17 @@ h2 {
     box-shadow: var(--shadow);
 }
 
+/* NASLOV KVIZA - prikazan na vrhu med reševanjem */
+#quizHeader {
+    font-size: 22px;
+    color: var(--info-blue);
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid var(--border-light);
+    padding-bottom: 10px;
+}
+
 .answerBtn {
     display: block;
     width: 600px;
@@ -519,6 +530,9 @@ h2 {
         width: 90%;
         padding: 20px;
     }
+    #quizHeader {
+        font-size: 18px;
+    }
 }
 </style>
 </head>
@@ -601,6 +615,7 @@ h2 {
 </div>
 
 <div id="quiz" style="display:none">
+  <div id="quizHeader"></div>
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
   <h3 id="question"></h3>
@@ -836,6 +851,9 @@ async function startQuiz() {
     }
     
     KVIZ_IME = izbranKviz.ime;
+    
+    // Prikaži ime kviza na vrhu med reševanjem
+    document.getElementById("quizHeader").innerText = "📚 " + izbranKviz.naslov;
     
     if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
     document.getElementById("startBtn").disabled = false;
