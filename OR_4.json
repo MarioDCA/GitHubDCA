@@ -1,253 +1,153 @@
 {
-  "naslov": "Kviz osnove računalništva 4",
+  "naslov": "Strojna oprema in bližnjice",
   "vprasanja": [
     {
       "q": "Kaj naredi gumb za vklop na računalniku?",
-      "a": [
-        "Izklopi zaslon",
-        "Zažene računalnik",
-        "Odpre internet"
-      ],
+      "a": ["Izklopi zaslon", "Zažene računalnik", "Odpre internet"],
       "c": 1,
       "e": "Gumb za vklop (power) zažene računalnik. Počakaj, da se vklopi – zaslon se prižge in pojavijo se ikone."
     },
     {
       "q": "Kaj je prenosni računalnik (laptop)?",
-      "a": [
-        "Računalnik, ki ga lahko prenašaš s seboj",
-        "Namizni računalnik",
-        "Tiskalnik"
-      ],
+      "a": ["Računalnik, ki ga lahko prenašaš s seboj", "Namizni računalnik", "Tiskalnik"],
       "c": 0,
       "e": "Prenosni računalnik (laptop) ima vgrajen zaslon, tipkovnico in baterijo, zato ga lahko nosiš s seboj."
     },
     {
       "q": "Kaj je zaslon na dotik (touchscreen)?",
-      "a": [
-        "Zaslon, ki ga upravljaš s prstom ali pisalom, brez miške",
-        "Zaslon, ki se sam čisti",
-        "Poseben tiskalnik"
-      ],
+      "a": ["Zaslon, ki ga upravljaš s prstom ali pisalom, brez miške", "Zaslon, ki se sam čisti", "Poseben tiskalnik"],
       "c": 0,
       "e": "Zaslon na dotik zazna dotik prsta ali pisala in tako nadomesti miško."
     },
     {
       "q": "Kaj je Bluetooth?",
-      "a": [
-        "Brezžična povezava na kratke razdalje (npr. za slušalke)",
-        "Vrsta virusa",
-        "Program za urejanje slik"
-      ],
+      "a": ["Brezžična povezava na kratke razdalje (npr. za slušalke)", "Vrsta virusa", "Program za urejanje slik"],
       "c": 0,
       "e": "Bluetooth omogoča brezžično povezavo med napravami na kratke razdalje, npr. slušalke ali tipkovnico brez kabla."
     },
     {
-      "q": "Kako odpreš program?",
-      "a": [
-        "Dvoklikneš na ikono",
-        "Pritisneš gumb za vklop",
-        "Izklopiš računalnik"
-      ],
+      "q": "Kaj je 'trdi disk' (hard disk) v računalniku?",
+      "a": ["Naprava za trajno shranjevanje podatkov", "Naprava za tiskanje dokumentov", "Vrsta tipkovnice"],
       "c": 0,
-      "e": "Dvoklik (dva hitra klika zapored) odpre program ali mapo. Poskusi!"
+      "e": "Trdi disk (HDD ali SSD) je glavni pomnilnik računalnika, kjer so trajno shranjeni vsi podatki, programi in datoteke - tudi ko računalnik izklopiš."
     },
     {
       "q": "Za kaj se uporablja HDMI kabel?",
-      "a": [
-        "Za povezavo računalnika z zunanjim zaslonom ali TV",
-        "Za polnjenje baterije",
-        "Za priklop miške"
-      ],
+      "a": ["Za povezavo računalnika z zunanjim zaslonom ali TV", "Za polnjenje baterije", "Za priklop miške"],
       "c": 0,
       "e": "HDMI kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
     },
     {
       "q": "Kaj pomeni 'shrani datoteko'?",
-      "a": [
-        "Izbrišeš datoteko",
-        "Datoteko shraniš na disk ali USB",
-        "Odpreš datoteko"
-      ],
+      "a": ["Izbrišeš datoteko", "Datoteko shraniš na disk ali USB", "Odpreš datoteko"],
       "c": 1,
       "e": "Shranjevanje pomeni, da podatki ostanejo na računalniku tudi po izklopu. Vedno shrani svoje delo!"
     },
     {
       "q": "Kaj je mapa na računalniku?",
-      "a": [
-        "Prostor za shranjevanje datotek",
-        "Kos papirja",
-        "Program"
-      ],
+      "a": ["Prostor za shranjevanje datotek", "Kos papirja", "Program"],
       "c": 0,
       "e": "Mape pomagajo organizirati datoteke, podobno kot predali v omari. V mapi so lahko datoteke ali druge mape."
     },
     {
       "q": "Kako preimenuješ datoteko?",
-      "a": [
-        "Desni klik → Preimenuj",
-        "Levi klik → Izbriši",
-        "Pritisneš gumb za vklop"
-      ],
+      "a": ["Desni klik → Preimenuj", "Levi klik → Izbriši", "Pritisneš gumb za vklop"],
       "c": 0,
       "e": "Z desnim klikom na datoteko odpreš meni. Izbereš 'Preimenuj' in napišeš novo ime."
     },
     {
       "q": "Kam vstaviš USB ključek na računalniku?",
-      "a": [
-        "V pravokotno režo (USB vrata)",
-        "V zvočnik",
-        "Pod tipkovnico"
-      ],
+      "a": ["V pravokotno režo (USB vrata)", "V zvočnik", "Pod tipkovnico"],
       "c": 0,
       "e": "USB ključek vstaviš v USB režo (port) na računalniku - navadno na strani ali zadaj."
     },
     {
-      "q": "Kako odpreš brskalnik?",
-      "a": [
-        "Klikneš na ikono (npr. Chrome, Edge)",
-        "Izklopiš računalnik",
-        "Odpreš mapo"
-      ],
+      "q": "Kaj je 'optični bralnik' (skener)?",
+      "a": ["Naprava za pretvorbo papirnih dokumentov v digitalno obliko", "Naprava za tiskanje", "Vrsta zvočnika"],
       "c": 0,
-      "e": "Ikona brskalnika je pogosto na namizju ali v opravilni vrstici spodaj – en klik ali dvoklik."
+      "e": "Optični bralnik (skener) pretvori papirne dokumente, fotografije ali slike v digitalno obliko, ki jo lahko shraniš na računalnik."
     },
     {
       "q": "Kaj naredi bližnjica Ctrl+Z?",
-      "a": [
-        "Shrani dokument",
-        "Razveljavi zadnje dejanje",
-        "Zapre program"
-      ],
+      "a": ["Shrani dokument", "Razveljavi zadnje dejanje", "Zapre program"],
       "c": 1,
       "e": "Ctrl+Z razveljavi (undo) zadnjo spremembo, ki si jo naredil - zelo uporabno, če se zmotiš."
     },
     {
       "q": "Kaj pomeni 'iskati' na internetu?",
-      "a": [
-        "Vnesti besedo v iskalnik (npr. Google)",
-        "Ugasniti računalnik",
-        "Narisati sliko"
-      ],
+      "a": ["Vnesti besedo v iskalnik (npr. Google)", "Ugasniti računalnik", "Narisati sliko"],
       "c": 0,
       "e": "V iskalnik (npr. Google) vpišeš, kaj želiš najti, in klikneš 'išči' ali lupo 🔍."
     },
     {
       "q": "Kaj naredi bližnjica Ctrl+A?",
-      "a": [
-        "Izbere vso vsebino (besedilo, datoteke)",
-        "Odpre novo okno",
-        "Izbriše vse"
-      ],
+      "a": ["Izbere vso vsebino (besedilo, datoteke)", "Odpre novo okno", "Izbriše vse"],
       "c": 0,
       "e": "Ctrl+A označi (izbere) vso vsebino naenkrat, npr. celotno besedilo v dokumentu."
     },
     {
       "q": "Kako pošlješ e-pošto?",
-      "a": [
-        "Vpišeš naslov prejemnika, zapišeš sporočilo in klikneš 'Pošlji'",
-        "Pokličeš prijatelja",
-        "Napišeš pismo na papir"
-      ],
+      "a": ["Vpišeš naslov prejemnika, zapišeš sporočilo in klikneš 'Pošlji'", "Pokličeš prijatelja", "Napišeš pismo na papir"],
       "c": 0,
       "e": "Najprej napišeš naslov prejemnika, zadevo in vsebino – potem klikneš 'Pošlji'."
     },
     {
       "q": "Kaj naredi bližnjica Ctrl+S?",
-      "a": [
-        "Shrani trenutni dokument",
-        "Zapre dokument",
-        "Natisne dokument"
-      ],
+      "a": ["Shrani trenutni dokument", "Zapre dokument", "Natisne dokument"],
       "c": 0,
       "e": "Ctrl+S je hitra bližnjica za shranjevanje - uporabna, da ne izgubiš svojega dela."
     },
     {
       "q": "Kaj je priponka (attachment) pri e-pošti?",
-      "a": [
-        "Datoteka, ki jo pripneš sporočilu (npr. slika, dokument)",
-        "Podpis pošiljatelja",
-        "Naslov e-pošte"
-      ],
+      "a": ["Datoteka, ki jo pripneš sporočilu (npr. slika, dokument)", "Podpis pošiljatelja", "Naslov e-pošte"],
       "c": 0,
       "e": "Priponka je datoteka, ki jo poleg besedila pripneš in pošlješ skupaj z e-pošto."
     },
     {
       "q": "Kaj je zvočnik na računalniku?",
-      "a": [
-        "Naprava za predvajanje zvoka",
-        "Naprava za snemanje zvoka",
-        "Vrsta kabla"
-      ],
+      "a": ["Naprava za predvajanje zvoka", "Naprava za snemanje zvoka", "Vrsta kabla"],
       "c": 0,
       "e": "Zvočnik predvaja zvok in glasbo, mikrofon pa zvok snema - to je razlika med njima."
     },
     {
       "q": "Kako prilagodiš glasnost zvoka na računalniku?",
-      "a": [
-        "Kliknem na ikono zvočnika v opravilni vrstici",
-        "Izklopim zaslon",
-        "Pritisnem Ctrl+Alt+Del"
-      ],
+      "a": ["Kliknem na ikono zvočnika v opravilni vrstici", "Izklopim zaslon", "Pritisnem Ctrl+Alt+Del"],
       "c": 0,
       "e": "Ikona zvočnika (navadno spodaj desno) omogoča, da glasnost povečaš, zmanjšaš ali izklopiš (mute)."
     },
     {
       "q": "Kaj je grafična kartica?",
-      "a": [
-        "Del računalnika, ki obdeluje in prikazuje sliko na zaslonu",
-        "Program za risanje",
-        "Vrsta tiskalnika"
-      ],
+      "a": ["Del računalnika, ki obdeluje in prikazuje sliko na zaslonu", "Program za risanje", "Vrsta tiskalnika"],
       "c": 0,
       "e": "Grafična kartica poskrbi, da se slika, video in igre prikažejo na zaslonu - pomembna je predvsem za igre in obdelavo videa."
     },
     {
       "q": "Kako varno izklopiš računalnik?",
-      "a": [
-        "Start → Izklop",
-        "Pritisnem gumb za vklop in držim",
-        "Izklopim kabel"
-      ],
+      "a": ["Start → Izklop", "Pritisnem gumb za vklop in držim", "Izklopim kabel"],
       "c": 0,
       "e": "Vedno uporabi meni Start (Windows) → Izklop. S tem ne poškoduješ podatkov."
     },
     {
       "q": "Kaj je tiskalnik (printer)?",
-      "a": [
-        "Naprava za tiskanje na papir",
-        "Zaslon",
-        "Tipkovnica"
-      ],
+      "a": ["Naprava za tiskanje na papir", "Zaslon", "Tipkovnica"],
       "c": 0,
       "e": "Tiskalnik natisne besedilo ali slike na papir. Najprej mora biti vklopljen in imeti papir."
     },
     {
       "q": "Kako natisneš dokument?",
-      "a": [
-        "Odpreš dokument → Datoteka → Natisni",
-        "Izbrišeš dokument",
-        "Izklopiš računalnik"
-      ],
+      "a": ["Odpreš dokument → Datoteka → Natisni", "Izbrišeš dokument", "Izklopiš računalnik"],
       "c": 0,
       "e": "V meniju 'Datoteka' izbereš 'Natisni' (ali Ctrl+P) in potrdiš. Počakaj, da tiskalnik natisne."
     },
     {
       "q": "Kaj je 'pomnilnik (RAM)'?",
-      "a": [
-        "Prostor, kjer računalnik začasno hrani podatke med delom",
-        "Trdi disk",
-        "Tipkovnica"
-      ],
+      "a": ["Prostor, kjer računalnik začasno hrani podatke med delom", "Trdi disk", "Tipkovnica"],
       "c": 0,
       "e": "RAM pomaga, da računalnik teče hitreje – začasni spomin. Več RAM-a, hitrejši je računalnik."
     },
     {
       "q": "Kaj narediš, če se računalnik 'obesi' (ne odziva)?",
-      "a": [
-        "Pritisneš Ctrl+Alt+Del in izbereš Upravitelj opravil",
-        "Ugasneš z gumbom na dolgo",
-        "Kličem sina"
-      ],
+      "a": ["Pritisneš Ctrl+Alt+Del in izbereš Upravitelj opravil", "Ugasneš z gumbom na dolgo", "Kličem sina"],
       "c": 0,
       "e": "Ctrl+Alt+Del odpre modri meni. Izberi 'Upravitelj opravil' in zapri program, ki ne deluje."
     }

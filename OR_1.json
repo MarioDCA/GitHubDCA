@@ -1,253 +1,153 @@
 {
-  "naslov": "Kviz osnove računalništva 1",
+  "naslov": "Osnovni računalniški pojmi",
   "vprasanja": [
     {
       "q": "Kaj je računalnik?",
-      "a": [
-        "Televizor",
-        "Naprava za obdelavo podatkov",
-        "Naprava za tiskanje računov"
-      ],
+      "a": ["Televizor", "Naprava za obdelavo podatkov", "Naprava za tiskanje računov"],
       "c": 1,
       "e": "Računalnik sprejema, obdeluje in shranjuje podatke."
     },
     {
       "q": "Kaj je tipkovnica?",
-      "a": [
-        "Naprava za pisanje besedila",
-        "Tiskalnik",
-        "Klaviatura"
-      ],
+      "a": ["Naprava za pisanje besedila", "Tiskalnik", "Klaviatura"],
       "c": 0,
       "e": "Tipkovnica omogoča vnos besedila in ukazov v računalnik."
     },
     {
       "q": "Kaj je računalniška miška?",
-      "a": [
-        "Naprava za premikanje kazalca",
-        "Miki miška",
-        "Vaba za miši"
-      ],
+      "a": ["Naprava za premikanje kazalca", "Miki miška", "Vaba za miši"],
       "c": 0,
       "e": "Miška premika kazalec po zaslonu in omogoča klikanje."
     },
     {
       "q": "Kaj pomeni internet?",
-      "a": [
-        "Gugalna mreža",
-        "Povezava računalnikov po svetu",
-        "Rešeto"
-      ],
+      "a": ["Gugalna mreža", "Povezava računalnikov po svetu", "Rešeto"],
       "c": 1,
       "e": "Internet povezuje računalnike po celem svetu in omogoča dostop do informacij."
     },
     {
       "q": "Kaj pomeni Wi-Fi?",
-      "a": [
-        "Brezžična povezava",
-        "Vrsta računalnika",
-        "Programska oprema"
-      ],
+      "a": ["Brezžična povezava", "Vrsta računalnika", "Programska oprema"],
       "c": 0,
-      "e": "Wi-Fi pomeni “Wireless Fidelity”, kar v praksi pomeni brezžična povezava med napravami."
+      "e": "Wi-Fi pomeni \"Wireless Fidelity\", kar v praksi pomeni brezžična povezava med napravami."
     },
     {
       "q": "Kaj je geslo?",
-      "a": [
-        "Skrivna beseda za dostop",
-        "Ime računalnika",
-        "Hišni naslov"
-      ],
+      "a": ["Skrivna beseda za dostop", "Ime računalnika", "Hišni naslov"],
       "c": 0,
       "e": "Geslo ščiti tvoj račun in preprečuje nepooblaščen dostop."
     },
     {
       "q": "Katero geslo od navedenih je najbolj varno?",
-      "a": [
-        "123456",
-        "maribor",
-        "M4riBor!72"
-      ],
+      "a": ["123456", "maribor", "M4riBor!72"],
       "c": 2,
       "e": "Močno geslo vsebuje velike in male črke, številke in posebne znake."
     },
     {
       "q": "Kaj pomeni e-pošta?",
-      "a": [
-        "Pošta preko spleta",
-        "Video igra",
-        "Električni aparat"
-      ],
+      "a": ["Pošta preko spleta", "Video igra", "Električni aparat"],
       "c": 0,
       "e": "E-pošta omogoča pošiljanje sporočil prek interneta."
     },
     {
       "q": "Kaj je USB ključek?",
-      "a": [
-        "Pomnilnik za datoteke",
-        "Ključ za odklepanje vrat",
-        "Urad Starih Bobnarjev"
-      ],
+      "a": ["Pomnilnik za datoteke", "Ključ za odklepanje vrat", "Urad Starih Bobnarjev"],
       "c": 0,
-      "e": "USB ključek je majhna prenosna naprava za shranjevanje podatkov (datotek, dokumentov, fotografij, glasbe…).."
+      "e": "USB ključek je majhna prenosna naprava za shranjevanje podatkov (datotek, dokumentov, fotografij, glasbe...)."
     },
     {
       "q": "Kaj je spletni brskalnik?",
-      "a": [
-        "Program za obisk spletnih strani",
-        "Virus",
-        "Stran z oglasi"
-      ],
+      "a": ["Program za obisk spletnih strani", "Virus", "Stran z oglasi"],
       "c": 0,
       "e": "Brskalnik omogoča ogled spletnih strani, kot so novice ali e-pošta."
     },
     {
       "q": "Kaj je Google?",
-      "a": [
-        "Spletni iskalnik",
-        "Protivirusni program",
-        "Gosenica"
-      ],
+      "a": ["Spletni iskalnik", "Protivirusni program", "Gosenica"],
       "c": 0,
       "e": "Google pomaga najti informacije na internetu."
     },
     {
       "q": "Kaj pomeni klik?",
-      "a": [
-        "Pritisk na tipko miške",
-        "Izklop računalnika",
-        "Tiskanje"
-      ],
+      "a": ["Pritisk na tipko miške", "Izklop računalnika", "Tiskanje"],
       "c": 0,
       "e": "Klik pomeni en pritisk na gumb miške."
     },
     {
       "q": "Kaj je računalniški virus?",
-      "a": [
-        "Škodljiv program",
-        "Igra",
-        "Računalnik je prehlajen"
-      ],
+      "a": ["Škodljiv program", "Igra", "Računalnik je prehlajen"],
       "c": 0,
       "e": "Virus je program, ki lahko poškoduje računalnik ali ukrade podatke."
     },
     {
       "q": "Kaj je procesor?",
-      "a": [
-        "Glavna enota za obdelavo podatkov",
-        "Inženir",
-        "Motor"
-      ],
+      "a": ["Glavna enota za obdelavo podatkov", "Inženir", "Motor"],
       "c": 0,
       "e": "Procesor so 'možgani' računalnika, ki obdeluje ukaze."
     },
     {
       "q": "Kaj je operacijski sistem?",
-      "a": [
-        "Programska oprema, ki upravlja z računalnikom",
-        "Spletni brskalnik",
-        "Operacijska miza"
-      ],
+      "a": ["Programska oprema, ki upravlja z računalnikom", "Spletni brskalnik", "Operacijska miza"],
       "c": 0,
       "e": "Operacijski sistem omogoča delovanje računalnika in programov."
     },
     {
       "q": "Kaj je datoteka?",
-      "a": [
-        "Mapa na mizi",
-        "Shranjeni podatki na računalniku",
-        "Vrsta tipkovnice"
-      ],
+      "a": ["Mapa na mizi", "Shranjeni podatki na računalniku", "Vrsta tipkovnice"],
       "c": 1,
       "e": "Datoteka je dokument, slika ali program, ki je shranjen na računalniku."
     },
     {
       "q": "Kaj je mapa (folder)?",
-      "a": [
-        "Prostor za shranjevanje datotek",
-        "Vrsta miške",
-        "Program"
-      ],
+      "a": ["Prostor za shranjevanje datotek", "Vrsta miške", "Program"],
       "c": 0,
       "e": "Mapa pomaga organizirati datoteke, podobno kot fascikel za papirje."
     },
     {
       "q": "Kaj pomeni 'shraniti' datoteko?",
-      "a": [
-        "Izbrisati datoteko",
-        "Posneti podatke na računalnik",
-        "Natisniti dokument"
-      ],
+      "a": ["Izbrisati datoteko", "Posneti podatke na računalnik", "Natisniti dokument"],
       "c": 1,
       "e": "Shranjevanje pomeni, da datoteko trajno zapišemo na računalnik ali disk."
     },
     {
       "q": "Kaj pomeni 'izbrisati' datoteko?",
-      "a": [
-        "Premakniti datoteko",
-        "Odstraniti datoteko",
-        "Odpreti datoteko"
-      ],
+      "a": ["Premakniti datoteko", "Odstraniti datoteko", "Odpreti datoteko"],
       "c": 1,
       "e": "Ko datoteko izbrišemo, jo odstranimo iz računalnika."
     },
     {
       "q": "Kaj je namizje (desktop)?",
-      "a": [
-        "Miza za računalnik",
-        "Začetni zaslon računalnika",
-        "Tipkovnica"
-      ],
+      "a": ["Miza za računalnik", "Začetni zaslon računalnika", "Tipkovnica"],
       "c": 1,
       "e": "Namizje je osnovni zaslon, ki ga vidiš po vklopu računalnika."
     },
     {
       "q": "Kaj pomeni dvoklik?",
-      "a": [
-        "Dva hitra klika miške",
-        "Dolg pritisk tipke",
-        "Izklop računalnika"
-      ],
+      "a": ["Dva hitra klika miške", "Dolg pritisk tipke", "Izklop računalnika"],
       "c": 0,
       "e": "Dvoklik pomeni, da hitro dvakrat pritisneš gumb na miški."
     },
     {
       "q": "Kaj je ikona?",
-      "a": [
-        "Majhna slika programa",
-        "Velika fotografija",
-        "Tipka na tipkovnici"
-      ],
+      "a": ["Majhna slika programa", "Velika fotografija", "Tipka na tipkovnici"],
       "c": 0,
       "e": "Ikona je majhna slika, ki predstavlja program ali datoteko."
     },
     {
       "q": "Kaj pomeni posodobitev (update)?",
-      "a": [
-        "Izbris programa",
-        "Nadgradnja programa",
-        "Izklop računalnika"
-      ],
+      "a": ["Izbris programa", "Nadgradnja programa", "Izklop računalnika"],
       "c": 1,
       "e": "Posodobitev izboljša program in odpravi napake ali doda nove funkcije."
     },
     {
       "q": "Kaj je tiskalnik?",
-      "a": [
-        "Naprava za tiskanje dokumentov",
-        "Program",
-        "Zaslon"
-      ],
+      "a": ["Naprava za tiskanje dokumentov", "Program", "Zaslon"],
       "c": 0,
       "e": "Tiskalnik omogoča, da dokument preneseš iz računalnika na papir."
     },
     {
       "q": "Kaj pomeni 'prijava' (login)?",
-      "a": [
-        "Vstop v račun z geslom",
-        "Izklop računalnika",
-        "Brisanje datotek"
-      ],
+      "a": ["Vstop v račun z geslom", "Izklop računalnika", "Brisanje datotek"],
       "c": 0,
       "e": "Prijava pomeni, da vpišeš uporabniško ime in geslo za dostop."
     }
