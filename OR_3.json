@@ -89,7 +89,7 @@
         "Klikneš prvi oglas"
       ],
       "c": 1,
-      "e": "Vedno preveri naslov strani (npr. banka.si) in razmisli, ali ji zaupaš."
+      "e": "Vedno preveri naslov strani (npr. otp.si) in razmisli, ali ji zaupaš."
     },
     {
       "q": "Kaj narediš, če prejmeš čuden klic, ki zahteva tvoje podatke?",
@@ -219,7 +219,7 @@
         "Deliš geslo"
       ],
       "c": 0,
-      "e": "Močno geslo je osnova varnosti. Naj bo sestavljeno iz velikih in malih črk, številk in posebnih simbolov."
+      "e": "Močno geslo je osnova varnosti. Naj bo sestavljeno iz velikih in malih črk (A a), številk (0 1) in posebnih simbolov (; : _)."
     },
     {
       "q": "Dobiš e-pošto: 'Vaša banka zahteva takojšnjo prijavo'. V sporočilu je povezava. Kaj narediš?",
