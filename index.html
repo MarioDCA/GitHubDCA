@@ -36,7 +36,7 @@ body {
     background: var(--bg-body);
     color: var(--text-primary);
     margin: 0;
-    padding: 20px;
+    padding: 15px 20px 20px 20px;
 }
 
 /* gumb za temno temo - zgoraj desno (prvi) */
@@ -152,6 +152,21 @@ body {
     box-shadow: var(--shadow);
 }
 
+.dobrodosliBesedilo {
+    font-size: 15px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+}
+.dobrodosliBesedilo p {
+    margin: 4px 0;
+}
+.dobrodosliBesedilo p strong {
+    color: var(--text-primary);
+    font-size: 18px;
+}
+
 .avtorFooter {
     margin-top: 15px;
     text-align: center;
@@ -189,7 +204,7 @@ h2 {
 #intro {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 0;
 }
 
 .introBox {
@@ -358,10 +373,10 @@ h2 {
 }
 
 #quiz {
-    margin: 30px auto;
+    margin: 0 auto 20px auto;
     max-width: 900px;
     background: var(--bg-card);
-    padding: 30px;
+    padding: 20px 30px;
     border-radius: 8px;
     box-shadow: var(--shadow);
 }
@@ -526,6 +541,12 @@ h2 {
 <div id="intro">
   <div class="introBox">
     <h1>Osnove računalništva</h1>
+    <div class="dobrodosliBesedilo">
+      <p><strong>Dobrodošli na spletni strani osnov računalništva za seniorje (Toti DCA).</strong></p>
+      <p>Tukaj so zbrani kratki kvizi za preverjanje in utrjevanje znanja s področja</p>
+      <p>računalništva in umetne inteligence</p>
+      <p>Spodaj izberite temo in začnite reševati.</p>
+    </div>
     <form onsubmit="handleIntroSubmit(); return false;">
       <div id="introStep0">
         <select id="izbiraKviza" onchange="document.getElementById('izberiKvizBtn').style.display='block';">
