@@ -36,7 +36,7 @@ body {
     background: var(--bg-body);
     color: var(--text-primary);
     margin: 0;
-    padding: 20px;
+    padding: 15px 20px 20px 20px;
 }
 
 /* gumb za temno temo - zgoraj desno (prvi) */
@@ -138,16 +138,16 @@ body {
 
 /* okvirček z imenom datoteke - spodaj pod uvodnim okvirjem */
 .file-info {
-    margin-top: 5px;
+    margin-top: 20px;
     text-align: center;
 }
 .file-info-box {
     display: inline-block;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-secondary);
     background: var(--bg-card);
-    padding: 3px 12px;
-    border-radius: 8px;
+    padding: 6px 15px;
+    border-radius: 10px;
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow);
 }
@@ -168,7 +168,7 @@ body {
 }
 
 .avtorFooter {
-    margin-top: 5px;
+    margin-top: 15px;
     text-align: center;
     font-size: 12px;
     color: var(--text-secondary);
@@ -204,7 +204,7 @@ h2 {
 #intro {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 0;
 }
 
 .introBox {
@@ -220,12 +220,6 @@ h2 {
 .introBox h1 {
     margin: 5px 0;
     color: var(--info-blue);
-}
-
-.introBox label {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 5px;
 }
 
 #ime {
@@ -379,23 +373,12 @@ h2 {
 }
 
 #quiz {
-    margin: 30px auto;
+    margin: 0 auto 20px auto;
     max-width: 900px;
     background: var(--bg-card);
-    padding: 30px;
+    padding: 20px 30px;
     border-radius: 8px;
     box-shadow: var(--shadow);
-}
-
-/* NASLOV KVIZA - prikazan na vrhu med reševanjem */
-#quizHeader {
-    font-size: 22px;
-    color: var(--info-blue);
-    margin-bottom: 10px;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 2px solid var(--border-light);
-    padding-bottom: 10px;
 }
 
 .answerBtn {
@@ -530,9 +513,6 @@ h2 {
         width: 90%;
         padding: 20px;
     }
-    #quizHeader {
-        font-size: 18px;
-    }
 }
 </style>
 </head>
@@ -562,9 +542,10 @@ h2 {
   <div class="introBox">
     <h1>Osnove računalništva</h1>
     <div class="dobrodosliBesedilo">
-      <p><strong>Dobrodošli!</strong></p>
-      <p>Kvizi so namenjeni utrjevanju znanja iz računalništva in umetne inteligence.</p>
-      <p>Izberite temo in začnite reševati.</p>
+      <p><strong>Dobrodošli na spletni strani osnov računalništva za seniorje (Toti DCA).</strong></p>
+      <p>Tukaj so zbrani kratki kvizi za preverjanje in utrjevanje znanja s področja</p>
+      <p>računalništva in umetne inteligence</p>
+      <p>Spodaj izberite temo in začnite reševati.</p>
     </div>
     <form onsubmit="handleIntroSubmit(); return false;">
       <div id="introStep0">
@@ -615,7 +596,6 @@ h2 {
 </div>
 
 <div id="quiz" style="display:none">
-  <div id="quizHeader"></div>
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
   <h3 id="question"></h3>
@@ -633,7 +613,7 @@ h2 {
 
 <script>
 // ========== GLOBALNE SPREMENLJIVKE ==========
-let KVIZ_IME = ""; // nastavljeno dinamično, ko uporabnik izbere kviz (glej izbranKviz)
+let KVIZ_IME = "";
 let userName = "";
 let currentQuestion = 0;
 let score = 0;
@@ -647,8 +627,6 @@ let isGroupMode = false;
 // Google Sheet URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
 
-// Varnostna funkcija: pobegne HTML posebne znake, da uporabniško vneseno ime
-// (ki gre v innerHTML) ne more vsebovati in izvesti HTML/JS kode (XSS zaščita).
 function escapeHtml(str) {
     return String(str)
         .replace(/&/g, "&amp;")
@@ -658,31 +636,19 @@ function escapeHtml(str) {
         .replace(/'/g, "&#039;");
 }
 
-// ========== KONFIGURACIJA KVIZOV (vprašanja se naložijo dinamično iz JSON datotek) ==========
-// ========== SEZNAM VSEH KVIZOV ==========
-// Vsak kviz spada v neko kategorijo - izbirnik na uvodnem zaslonu se samodejno razvrsti po kategorijah.
-// Ko boš dodajal nove kvize (tudi nove kategorije), samo dodaj nov vnos spodaj - v HTML ni treba nič spreminjati.
 const KVIZI = [
     {id: "OR_1", ime: "OR_1.json", naslov: "Osnovni računalniški pojmi",   datoteka: "OR_1.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_2", ime: "OR_2.json", naslov: "Osnove interneta in brskanja", datoteka: "OR_2.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_3", ime: "OR_3.json", naslov: "Varnost na spletu",           datoteka: "OR_3.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_4", ime: "OR_4.json", naslov: "Strojna oprema in bližnjice", datoteka: "OR_4.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_5", ime: "OR_5.json", naslov: "Sodobne aplikacije in naprave", datoteka: "OR_5.json", kategorija: "🖥️ Osnove računalništva"},
-
     {id: "AI_1", ime: "AI_1.json", naslov: "Pravilna raba pozivov (promptov)", datoteka: "AI_1.json", kategorija: "🤖 ChatGPT"},
     {id: "AI_2", ime: "AI_2.json", naslov: "Uporaba umetne inteligence",       datoteka: "AI_2.json", kategorija: "🤖 ChatGPT"}
-
-    // Prihodnje kategorije/kvize dodaj po enakem vzorcu, npr.:
-    // {id: "IV_1", ime: "IV_1.json", naslov: "...", datoteka: "IV_1.json", kategorija: "🌐 Internet in varnost"},
-    // {id: "EP_1", ime: "EP_1.json", naslov: "...", datoteka: "EP_1.json", kategorija: "📧 Elektronska pošta"},
-    // {id: "AN_1", ime: "AN_1.json", naslov: "...", datoteka: "AN_1.json", kategorija: "📱 Pametni telefoni Android"},
-    // {id: "W11_1", ime: "W11_1.json", naslov: "...", datoteka: "W11_1.json", kategorija: "💾 Windows 11"},
 ];
 
 function zgradiIzbirnikKvizov() {
     const select = document.getElementById("izbiraKviza");
     select.innerHTML = '<option value="">-- Izberi kviz --</option>';
-    // Razvrsti kvize v kategorije, v vrstnem redu, kot se prvič pojavijo v seznamu KVIZI
     const kategorije = [];
     const poKategorijah = {};
     KVIZI.forEach(k => {
@@ -705,16 +671,15 @@ function zgradiIzbirnikKvizov() {
     });
 }
 
-let izbranKviz = null;      // izbran vnos iz KVIZI, glede na izbiro na uvodnem zaslonu
-let vprasanjaPromise = null; // Promise, ki se razreši v naloženo vsebino vprašanj (nalaga se v ozadju)
-let questions = [];          // vprašanja se napolnijo šele po nalaganju izbrane JSON datoteke
+let izbranKviz = null;
+let vprasanjaPromise = null;
+let questions = [];
 
 function naloziVprasanja(datoteka) {
     return fetch(datoteka).then(res => {
         if (!res.ok) throw new Error("HTTP " + res.status);
         return res.json();
     }).then(podatki => {
-        // Datoteka ima obliko { "naslov": "...", "vprasanja": [...] }
         if (!podatki || !Array.isArray(podatki.vprasanja)) {
             throw new Error("Neveljavna oblika datoteke z vprašanji");
         }
@@ -722,7 +687,6 @@ function naloziVprasanja(datoteka) {
     });
 }
 
-// ========== POMOŽNE FUNKCIJE ==========
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -733,9 +697,7 @@ function shuffleArray(arr) {
 
 function prepareQuestions(shouldShuffle) {
     questions.forEach(q => {
-        // Ustvari seznam odgovorov z originalnimi indeksi
         q.shuffled = q.a.map((txt, idx) => ({ originalIndex: idx, text: txt }));
-        // Zmešaj vrstni red samo, če je zahtevano (privzeto da, razen pri skupinskem reševanju)
         if (shouldShuffle) {
             q.shuffled = shuffleArray(q.shuffled);
         }
@@ -783,15 +745,12 @@ function playWrong() {
     osc.stop(audioCtx.currentTime + 0.5);
 }
 
-// ========== OSNOVNE FUNKCIJE KVIZA ==========
-// ========== DVOSTOPENJSKI UVODNI OBRAZEC (ime -> način reševanja) ==========
 function handleIntroSubmit() {
     const step0 = document.getElementById("introStep0");
     const step1 = document.getElementById("introStep1");
     const step2 = document.getElementById("introStep2");
     
     if (step0.style.display !== "none") {
-        // 0. korak: izbira kviza - takoj začni nalagati vprašanja v ozadju
         const izbiraSelect = document.getElementById("izbiraKviza");
         if (!izbiraSelect.value) {
             alert("Izberite kviz.");
@@ -806,20 +765,14 @@ function handleIntroSubmit() {
         step0.style.display = "none";
         step1.style.display = "block";
     } else if (step2.style.display === "none") {
-        // 1. korak: preveri ime, nato pokaži izbiro načina reševanja
         const imeVneseno = document.getElementById("ime").value.trim();
         if (imeVneseno === "") {
             alert("Vpišite ime");
             return;
         }
-        // Opomba: ime se NAMENOMA ne shranjuje v localStorage (ne preživi zaprtja/osvežitve strani) -
-        // gre za skupne/učilniške računalnike, kjer bi se sicer naslednjemu tečajniku predizpolnilo
-        // ime prejšnjega. Znotraj ISTEGA obiska (ponovitev kviza, izbira drugega kviza) se ime ohrani
-        // samo zato, ker stran ni bila ponovno naložena - polje #ime preprosto ostane izpolnjeno.
         step1.style.display = "none";
         step2.style.display = "block";
     } else {
-        // 2. korak: ugotovi izbrani način reševanja (privzeto "posameznik", če ni izbire)
         const nacinRadio = document.querySelector('input[name="nacinResevanja"]:checked');
         isGroupMode = nacinRadio ? (nacinRadio.value === "skupina") : false;
         startQuiz();
@@ -835,8 +788,6 @@ async function startQuiz() {
     
     initAudioOnUserInteraction();
     
-    // Če se vprašanja še nalagajo, to sporoči (v praksi je nalaganje skoraj vedno že končano,
-    // saj se je začelo takoj po izbiri kviza na 0. koraku)
     const nalaganjeSporocilo = document.getElementById("nalaganjeSporocilo");
     if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "block";
     document.getElementById("startBtn").disabled = true;
@@ -852,9 +803,6 @@ async function startQuiz() {
     
     KVIZ_IME = izbranKviz.ime;
     
-    // Prikaži ime kviza na vrhu med reševanjem
-    document.getElementById("quizHeader").innerText = "📚 " + izbranKviz.naslov;
-    
     if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
     document.getElementById("startBtn").disabled = false;
     
@@ -869,7 +817,6 @@ async function startQuiz() {
     answered = false;
     if (questionTimer) clearTimeout(questionTimer);
     
-    // PRIPRAVI VPRAŠANJA (zmešaj odgovore, razen pri skupinskem reševanju)
     prepareQuestions(!isGroupMode);
     
     showQuestion();
@@ -956,7 +903,6 @@ function checkAnswer(selectedIdx) {
     
     userAnswers[currentQuestion] = selectedIdx;
     
-    // Posodobi vrstico napredka glede na dokončano vprašanje (pravilno doseže 100% na koncu)
     const percentDone = ((currentQuestion + 1) / questions.length) * 100;
     document.getElementById("progressBar").style.width = percentDone + "%";
     
@@ -1035,7 +981,6 @@ function finishQuiz() {
         return;
     }
     
-    // ========== USPEŠEN ZAKLJUČEK ==========
     document.getElementById("score").innerHTML = `
         <div style="font-size:28px;margin-bottom:15px;">${gradeEmoji} ${escapeHtml(userName)}, odgovoril/a si pravilno na <b>${score}</b> od <b>${questions.length}</b> vprašanj.</div>
         <div style="font-size:30px;font-weight:bold;color:${gradeColor};">OCENA: ${gradeText}</div>
@@ -1080,8 +1025,6 @@ function restartQuiz() {
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
     document.getElementById("avtorFooter").style.display = "none";
-    // Ime in izbrani način (skupina/posameznik) se OHRANITA - ni jih treba ponovno vnašati/izbirati.
-    // startQuiz() ponovno prebere isto ime iz polja (ki ga nismo počistili) in ohrani isti isGroupMode.
     startQuiz();
 }
 
@@ -1092,28 +1035,123 @@ function izberiDrugKviz() {
     document.getElementById("fileInfo").style.display = "block";
     document.getElementById("avtorFooter").style.display = "block";
     document.getElementById("intro").style.display = "flex";
-    // Ime OSTANE izpolnjeno (localStorage + polje #ime nista bila počiščena) - izbere se samo nov kviz
     document.getElementById("introStep0").style.display = "block";
     document.getElementById("introStep1").style.display = "none";
     document.getElementById("introStep2").style.display = "none";
-    // Ponastavi izbirnik in skrij gumb Naprej
     document.getElementById("izbiraKviza").value = "";
     document.getElementById("izberiKvizBtn").style.display = "none";
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
     const cas = new Date().toLocaleString();
+    
+    // Ustvari preglednico z rezultati po vprašanjih
+    let podrobnostiHtml = '<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px;">';
+    podrobnostiHtml += '<tr style="background-color: #4CAF50; color: white;">';
+    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Vprašanje</th>';
+    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Rezultat</th>';
+    podrobnostiHtml += '</tr>';
+    
+    for (let i = 0; i < questions.length; i++) {
+        const q = questions[i];
+        let rezultat = '';
+        let barva = '';
+        if (userAnswers[i] !== undefined) {
+            const isCorrect = (q.shuffled[userAnswers[i]].originalIndex === q.c);
+            rezultat = isCorrect ? '✅ Pravilno' : '❌ Napačno';
+            barva = isCorrect ? '#d4edda' : '#f8d7da';
+        } else {
+            rezultat = '⬜ Ni odgovora';
+            barva = '#e2e3e5';
+        }
+        podrobnostiHtml += `<tr style="background-color: ${barva};">`;
+        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${i+1}</td>`;
+        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${rezultat}</td>`;
+        podrobnostiHtml += '</tr>';
+    }
+    podrobnostiHtml += '</table>';
+    
+    // Določi barvo glede na oceno
+    let barvaOcene = '';
+    let emoji = '';
+    if (ocena >= 5) { barvaOcene = '#28a745'; emoji = '🏆'; }
+    else if (ocena >= 4) { barvaOcene = '#17a2b8'; emoji = '🌟'; }
+    else if (ocena >= 3) { barvaOcene = '#ffc107'; emoji = '👍'; }
+    else if (ocena >= 2) { barvaOcene = '#fd7e14'; emoji = '📚'; }
+    else { barvaOcene = '#dc3545'; emoji = '💪'; }
+    
+    // Ustvari lepo oblikovano HTML sporočilo
+    const htmlContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center; }
+            .content { background: #f8f9fa; padding: 20px; border-radius: 0 0 10px 10px; }
+            .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #dee2e6; }
+            .info-label { font-weight: bold; color: #495057; }
+            .info-value { color: #212529; }
+            .score-box { background: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+            .score-number { font-size: 32px; font-weight: bold; color: ${barvaOcene}; }
+            .grade-box { background: ${barvaOcene}; color: white; padding: 10px; border-radius: 8px; font-size: 24px; font-weight: bold; text-align: center; margin: 15px 0; }
+            .details-title { font-size: 18px; font-weight: bold; margin: 20px 0 10px 0; color: #495057; }
+            .footer { text-align: center; margin-top: 20px; color: #6c757d; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1 style="margin: 0; font-size: 24px;">📊 Rezultati kviza</h1>
+        </div>
+        <div class="content">
+            <div class="info-row">
+                <span class="info-label">👤 Ime:</span>
+                <span class="info-value">${escapeHtml(userName)}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">📚 Kviz:</span>
+                <span class="info-value">${escapeHtml(izbranKviz.naslov)}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">📅 Datum in čas:</span>
+                <span class="info-value">${cas}</span>
+            </div>
+            
+            <div class="score-box">
+                <div style="font-size: 16px; color: #6c757d;">Število pravilnih odgovorov</div>
+                <div class="score-number">${pravilni} / ${vprasanja}</div>
+            </div>
+            
+            <div class="grade-box">
+                ${emoji} Ocena: ${ocena} ${emoji}
+            </div>
+            
+            <div class="details-title">📝 Podrobnosti po vprašanjih:</div>
+            ${podrobnostiHtml}
+        </div>
+        <div class="footer">
+            <p>Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.</p>
+            <p>© 2026 - Vse pravice pridržane</p>
+        </div>
+    </body>
+    </html>
+    `;
+    
+    // Pripravi podatke za pošiljanje
     let data = {
         ime: userName,
         kviz: KVIZ_IME,
         pravilni: pravilni,
         vprasanja: vprasanja,
         ocena: ocena,
-        cas: cas
+        cas: cas,
+        html: htmlContent
     };
+    
+    // Dodaj podrobnosti za vsako vprašanje
     for (let i = 0; i < userAnswers.length; i++) {
         const q = questions[i];
-        // Preveri, ali je odgovor pravilen
         if (userAnswers[i] !== undefined) {
             const isCorrect = (q.shuffled[userAnswers[i]].originalIndex === q.c) ? 1 : 0;
             data["Q" + (i+1)] = isCorrect;
@@ -1121,9 +1159,10 @@ function sendResult(pravilni, vprasanja, ocena) {
             data["Q" + (i+1)] = 0;
         }
     }
+    
     fetch(scriptURL, {
         method: "POST",
-        mode: "no-cors", // Dodano za preprečevanje CORS napak
+        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         },
@@ -1132,7 +1171,6 @@ function sendResult(pravilni, vprasanja, ocena) {
 }
 
 // ========== TEMNA TEMA ==========
-// Nabor barv za obe temi, zbran na enem mestu (namesto podvojene kode za light/dark)
 const THEMES = {
     light: {
         vars: {
@@ -1213,7 +1251,6 @@ function initTheme() {
     }
 }
 
-// ========== FUNKCIJA ZA IZKLOP ZVOKA ==========
 function toggleSound() {
     soundEnabled = !soundEnabled;
     localStorage.setItem("kvizSound", soundEnabled ? "on" : "off");
@@ -1241,7 +1278,6 @@ function toggleSound() {
     }
 }
 
-// ========== FUNKCIJA ZA INFO OKNO ==========
 function showInfoModal() {
     document.getElementById("infoModal").style.display = "flex";
 }
@@ -1275,15 +1311,12 @@ window.addEventListener("click", function(e) {
 });
 window.addEventListener("DOMContentLoaded", () => {
     initTheme();
-    // Uskladi napis na gumbu za zvok s shranjeno nastavitvijo
     if (!soundEnabled) {
         document.getElementById("soundToggle").innerHTML = "🔇 Zvok izklopljen";
     }
-    // Zgradi izbirnik kvizov, razvrščen po kategorijah
     zgradiIzbirnikKvizov();
 });
 
-// Opozorilo pred nenamernim zapiranjem zavihka med reševanjem kviza
 window.addEventListener("beforeunload", function(e) {
     const quizVisible = document.getElementById("quiz").style.display === "block";
     if (quizVisible) {
