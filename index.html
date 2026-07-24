@@ -557,8 +557,8 @@ h2 {
       </div>
 
       <div id="introStep1" style="display:none">
-        <label for="ime">Vpiši svoje ime:</label>
-        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off">
+        <label for="ime" style="display: block; margin-bottom: 8px; font-size: 18px;">Vpiši svoje ime:</label>
+        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off" style="width: 320px; max-width: 80%; font-size: 20px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-light); text-align: center; background: var(--bg-card); color: var(--text-primary);">
         <button id="nextBtn" type="submit">➡️ Naprej</button>
 
         <div class="infoBox">
@@ -584,10 +584,6 @@ h2 {
   </div>
 </div>
 
-<div class="avtorFooter" id="avtorFooter">
-    Avtor: Mario
-</div>
-
 <!-- okvirček z imenom datoteke - spodaj pod uvodnim okvirjem -->
 <div class="file-info" id="fileInfo">
     <div class="file-info-box">
@@ -595,6 +591,9 @@ h2 {
     </div>
 </div>
 
+<div class="avtorFooter" id="avtorFooter">
+    Avtor: M.V.
+</div>
 <div id="quiz" style="display:none">
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
