@@ -584,6 +584,10 @@ h2 {
   </div>
 </div>
 
+<div class="avtorFooter" id="avtorFooter">
+    Avtor: Mario
+</div>
+
 <!-- okvirček z imenom datoteke - spodaj pod uvodnim okvirjem -->
 <div class="file-info" id="fileInfo">
     <div class="file-info-box">
@@ -591,9 +595,6 @@ h2 {
     </div>
 </div>
 
-<div class="avtorFooter" id="avtorFooter">
-    Avtor: M.V.
-</div>
 <div id="quiz" style="display:none">
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
@@ -1044,97 +1045,49 @@ function izberiDrugKviz() {
 function sendResult(pravilni, vprasanja, ocena) {
     const cas = new Date().toLocaleString();
     
-    // Ustvari preglednico z rezultati po vprašanjih
-    let podrobnostiHtml = '<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px;">';
-    podrobnostiHtml += '<tr style="background-color: #4CAF50; color: white;">';
-    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Vprašanje</th>';
-    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Rezultat</th>';
-    podrobnostiHtml += '</tr>';
+    // Ustvari tekstovno preglednico z rezultati
+    let podrobnostiTekst = "\n";
+    podrobnostiTekst += "=".repeat(50) + "\n";
+    podrobnostiTekst += "  PODROBNOSTI PO VPRAŠANJIH\n";
+    podrobnostiTekst += "=".repeat(50) + "\n\n";
     
     for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
         let rezultat = '';
-        let barva = '';
         if (userAnswers[i] !== undefined) {
             const isCorrect = (q.shuffled[userAnswers[i]].originalIndex === q.c);
-            rezultat = isCorrect ? '✅ Pravilno' : '❌ Napačno';
-            barva = isCorrect ? '#d4edda' : '#f8d7da';
+            rezultat = isCorrect ? '[✔] Pravilno' : '[✘] Napačno';
         } else {
-            rezultat = '⬜ Ni odgovora';
-            barva = '#e2e3e5';
+            rezultat = '[ ] Ni odgovora';
         }
-        podrobnostiHtml += `<tr style="background-color: ${barva};">`;
-        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${i+1}</td>`;
-        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${rezultat}</td>`;
-        podrobnostiHtml += '</tr>';
+        podrobnostiTekst += `Vprašanje ${String(i+1).padStart(2, ' ')}: ${rezultat}\n`;
     }
-    podrobnostiHtml += '</table>';
     
-    // Določi barvo glede na oceno
-    let barvaOcene = '';
-    let emoji = '';
-    if (ocena >= 5) { barvaOcene = '#28a745'; emoji = '🏆'; }
-    else if (ocena >= 4) { barvaOcene = '#17a2b8'; emoji = '🌟'; }
-    else if (ocena >= 3) { barvaOcene = '#ffc107'; emoji = '👍'; }
-    else if (ocena >= 2) { barvaOcene = '#fd7e14'; emoji = '📚'; }
-    else { barvaOcene = '#dc3545'; emoji = '💪'; }
+    podrobnostiTekst += "\n" + "=".repeat(50) + "\n";
     
-    // Ustvari lepo oblikovano HTML sporočilo
-    const htmlContent = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center; }
-            .content { background: #f8f9fa; padding: 20px; border-radius: 0 0 10px 10px; }
-            .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #dee2e6; }
-            .info-label { font-weight: bold; color: #495057; }
-            .info-value { color: #212529; }
-            .score-box { background: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-            .score-number { font-size: 32px; font-weight: bold; color: ${barvaOcene}; }
-            .grade-box { background: ${barvaOcene}; color: white; padding: 10px; border-radius: 8px; font-size: 24px; font-weight: bold; text-align: center; margin: 15px 0; }
-            .details-title { font-size: 18px; font-weight: bold; margin: 20px 0 10px 0; color: #495057; }
-            .footer { text-align: center; margin-top: 20px; color: #6c757d; font-size: 12px; }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <h1 style="margin: 0; font-size: 24px;">📊 Rezultati kviza</h1>
-        </div>
-        <div class="content">
-            <div class="info-row">
-                <span class="info-label">👤 Ime:</span>
-                <span class="info-value">${escapeHtml(userName)}</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">📚 Kviz:</span>
-                <span class="info-value">${escapeHtml(izbranKviz.naslov)}</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">📅 Datum in čas:</span>
-                <span class="info-value">${cas}</span>
-            </div>
-            
-            <div class="score-box">
-                <div style="font-size: 16px; color: #6c757d;">Število pravilnih odgovorov</div>
-                <div class="score-number">${pravilni} / ${vprasanja}</div>
-            </div>
-            
-            <div class="grade-box">
-                ${emoji} Ocena: ${ocena} ${emoji}
-            </div>
-            
-            <div class="details-title">📝 Podrobnosti po vprašanjih:</div>
-            ${podrobnostiHtml}
-        </div>
-        <div class="footer">
-            <p>Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.</p>
-            <p>© 2026 - Vse pravice pridržane</p>
-        </div>
-    </body>
-    </html>
+    // Ustvari lepo oblikovano tekstovno sporočilo
+    const tekstContent = `
+📊 REZULTATI KVIZA
+${"=".repeat(50)}
+
+👤 Ime: ${escapeHtml(userName)}
+📚 Kviz: ${escapeHtml(izbranKviz.naslov)}
+📅 Datum in čas: ${cas}
+
+${"=".repeat(50)}
+  ŠTEVILO PRAVILNIH ODGOVOROV
+  ${pravilni} / ${vprasanja}
+${"=".repeat(50)}
+
+🎓 OCENA: ${ocena}
+${"=".repeat(50)}
+
+📝 PODROBNOSTI PO VPRAŠANJIH:
+${podrobnostiTekst}
+
+---
+Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.
+© 2026 - Vse pravice pridržane
     `;
     
     // Pripravi podatke za pošiljanje
@@ -1145,7 +1098,7 @@ function sendResult(pravilni, vprasanja, ocena) {
         vprasanja: vprasanja,
         ocena: ocena,
         cas: cas,
-        html: htmlContent
+        rezultati: tekstContent
     };
     
     // Dodaj podrobnosti za vsako vprašanje
