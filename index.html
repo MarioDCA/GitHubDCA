@@ -381,6 +381,13 @@ h2 {
     box-shadow: var(--shadow);
 }
 
+#kvizNaslov {
+    font-size: 22px;
+    color: var(--info-blue);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .answerBtn {
     display: block;
     width: 600px;
@@ -601,6 +608,7 @@ h2 {
 </div>
 
 <div id="quiz" style="display:none">
+  <div id="kvizNaslov"></div>
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
   <h3 id="question"></h3>
@@ -821,12 +829,63 @@ async function startQuiz() {
     document.getElementById("avtorFooter").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     
+    // Prikaži naslov kviza
+    document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
+    
     currentQuestion = 0;
     score = 0;
     userAnswers = [];
     answered = false;
     if (questionTimer) clearTimeout(questionTimer);
     
+    prepareQuestions(!isGroupMode);
+    
+    showQuestion();
+}
+
+// Nova funkcija za direktni začetek kviza (preskoči izbiro načina)
+async function startQuizDirect() {
+    userName = document.getElementById("ime").value.trim();
+    if (userName === "") {
+        alert("Vpišite ime");
+        return;
+    }
+    
+    initAudioOnUserInteraction();
+    
+    const nalaganjeSporocilo = document.getElementById("nalaganjeSporocilo");
+    if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "block";
+    document.getElementById("startBtn").disabled = true;
+    
+    try {
+        questions = await vprasanjaPromise;
+    } catch (err) {
+        alert("Napaka pri nalaganju vprašanj (" + err.message + "). Preveri internetno povezavo in poskusi znova.");
+        if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
+        document.getElementById("startBtn").disabled = false;
+        return;
+    }
+    
+    KVIZ_IME = izbranKviz.ime;
+    
+    if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
+    document.getElementById("startBtn").disabled = false;
+    
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("fileInfo").style.display = "none";
+    document.getElementById("avtorFooter").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+    
+    // Prikaži naslov kviza
+    document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
+    
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    answered = false;
+    if (questionTimer) clearTimeout(questionTimer);
+    
+    // Uporabi obstoječo nastavitev isGroupMode
     prepareQuestions(!isGroupMode);
     
     showQuestion();
@@ -1035,7 +1094,8 @@ function restartQuiz() {
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
     document.getElementById("avtorFooter").style.display = "none";
-    startQuiz();
+    // Ponovno zaženi kviz brez ponovnega vprašanja za način reševanja
+    startQuizDirect();
 }
 
 function izberiDrugKviz() {
