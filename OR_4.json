@@ -41,7 +41,7 @@
       "q": "Kaj pomeni 'shrani datoteko'?",
       "a": ["Izbrišeš datoteko", "Datoteko shraniš na disk ali USB", "Odpreš datoteko"],
       "c": 1,
-      "e": "Shranjevanje pomeni, da podatki ostanejo na računalniku (USB pomnilniškem 'ključku') tudi po izklopu. Vedno shrani svoje delo!"
+      "e": "Shranjevanje pomeni, da podatki ostanejo na računalniku ali USB pomnilniškem 'ključku' tudi po izklopu. Vedno shrani svoje delo!"
     },
     {
       "q": "Kaj je mapa na računalniku?",
