@@ -5,7 +5,7 @@
       "q": "Kaj naredi gumb za vklop na računalniku?",
       "a": ["Izklopi zaslon", "Zažene računalnik", "Odpre internet"],
       "c": 1,
-      "e": "Gumb za vklop (power) zažene računalnik. Počakaj, da se vklopi – zaslon se prižge in pojavijo se ikone."
+      "e": "Gumb za vklop (Power) zažene računalnik. Počakaj, da se vklopi – zaslon se prižge in pojavijo se ikone."
     },
     {
       "q": "Kaj je prenosni računalnik (laptop)?",
