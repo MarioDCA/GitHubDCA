@@ -548,6 +548,7 @@ h2 {
       <p>Spodaj izberite temo in začnite reševati.</p>
     </div>
     <form onsubmit="handleIntroSubmit(); return false;">
+      <!-- 1. KORAK: IZBIRA KVIZA -->
       <div id="introStep0">
         <select id="izbiraKviza" onchange="document.getElementById('izberiKvizBtn').style.display='block';">
           <option value="">-- Izberi kviz --</option>
@@ -556,20 +557,8 @@ h2 {
         <button id="infoBtn" type="button">ℹ️ Info</button>
       </div>
 
+      <!-- 2. KORAK: IZBIRA NAČINA REŠEVANJA -->
       <div id="introStep1" style="display:none">
-        <label for="ime" style="display: block; margin-bottom: 8px; font-size: 18px;">Vpiši svoje ime:</label>
-        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off" style="width: 320px; max-width: 80%; font-size: 20px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-light); text-align: center; background: var(--bg-card); color: var(--text-primary);">
-        <button id="nextBtn" type="submit">➡️ Naprej</button>
-
-        <div class="infoBox">
-          <div class="encouragement">
-              🌟 <strong>Brez skrbi!</strong> Vsak klik je korak naprej.<br>
-              Če česa ne veš, nič ne de – ob vsakem odgovoru dobiš prijazno razlago.
-          </div>
-        </div>
-      </div>
-
-      <div id="introStep2" style="display:none">
         <div class="modeSelect">
           <label class="modeSelectLabel">Kako rešujete kviz?</label>
           <div class="modeOptions">
@@ -577,8 +566,22 @@ h2 {
             <label><input type="radio" name="nacinResevanja" value="skupina"> 👥 Skupina</label>
           </div>
         </div>
+        <button id="nextBtn" type="submit">➡️ Naprej</button>
+      </div>
+
+      <!-- 3. KORAK: VNOS IMENA -->
+      <div id="introStep2" style="display:none">
+        <label for="ime" style="display: block; margin-bottom: 8px; font-size: 18px;">Vpiši svoje ime:</label>
+        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off" style="width: 320px; max-width: 80%; font-size: 20px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-light); text-align: center; background: var(--bg-card); color: var(--text-primary);">
         <button id="startBtn" type="submit">🚀 Začni kviz</button>
         <p id="nalaganjeSporocilo" style="display:none; font-size:14px; opacity:0.8;">⏳ Nalagam vprašanja …</p>
+        
+        <div class="infoBox">
+          <div class="encouragement">
+              🌟 <strong>Brez skrbi!</strong> Vsak klik je korak naprej.<br>
+              Če česa ne veš, nič ne de – ob vsakem odgovoru dobiš prijazno razlago.
+          </div>
+        </div>
       </div>
     </form>
   </div>
