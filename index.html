@@ -636,6 +636,7 @@ let audioCtx = null;
 let answered = false;
 let soundEnabled = (localStorage.getItem("kvizSound") !== "off");
 let isGroupMode = false;
+let hasSelectedMode = false; // Ali je uporabnik že izbral način reševanja
 
 // Google Sheet URL
 const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
@@ -777,11 +778,22 @@ function handleIntroSubmit() {
         }
         vprasanjaPromise = naloziVprasanja(izbranKviz.datoteka);
         step0.style.display = "none";
-        step1.style.display = "block";
+        
+        // Če smo že izbrali način reševanja (pri ponovnem izbiranju kviza), preskočimo vse korake
+        if (hasSelectedMode && userName !== "") {
+            // Preskoči korak 1 in 2, direktno začni kviz
+            step1.style.display = "none";
+            step2.style.display = "none";
+            startQuizDirect();
+        } else {
+            // Sicer pokažemo izbiro načina
+            step1.style.display = "block";
+        }
     } else if (step1.style.display !== "none") {
         // 2. korak: izbira načina reševanja
         const nacinRadio = document.querySelector('input[name="nacinResevanja"]:checked');
         isGroupMode = nacinRadio ? (nacinRadio.value === "skupina") : false;
+        hasSelectedMode = true;
         step1.style.display = "none";
         step2.style.display = "block";
         // Skrijemo gumb Info v 3. koraku
@@ -793,15 +805,18 @@ function handleIntroSubmit() {
             alert("Vpišite ime");
             return;
         }
+        userName = imeVneseno;
         startQuiz();
     }
 }
 
 async function startQuiz() {
-    userName = document.getElementById("ime").value.trim();
     if (userName === "") {
-        alert("Vpišite ime");
-        return;
+        userName = document.getElementById("ime").value.trim();
+        if (userName === "") {
+            alert("Vpišite ime");
+            return;
+        }
     }
     
     initAudioOnUserInteraction();
@@ -843,33 +858,32 @@ async function startQuiz() {
     showQuestion();
 }
 
-// Nova funkcija za direktni začetek kviza (preskoči izbiro načina)
+// Nova funkcija za direktni začetek kviza (preskoči vse korake)
 async function startQuizDirect() {
-    userName = document.getElementById("ime").value.trim();
     if (userName === "") {
-        alert("Vpišite ime");
-        return;
+        userName = document.getElementById("ime").value.trim();
+        if (userName === "") {
+            alert("Vpišite ime");
+            return;
+        }
     }
     
     initAudioOnUserInteraction();
     
     const nalaganjeSporocilo = document.getElementById("nalaganjeSporocilo");
     if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "block";
-    document.getElementById("startBtn").disabled = true;
     
     try {
         questions = await vprasanjaPromise;
     } catch (err) {
         alert("Napaka pri nalaganju vprašanj (" + err.message + "). Preveri internetno povezavo in poskusi znova.");
         if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
-        document.getElementById("startBtn").disabled = false;
         return;
     }
     
     KVIZ_IME = izbranKviz.ime;
     
     if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
-    document.getElementById("startBtn").disabled = false;
     
     document.getElementById("intro").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
@@ -1094,7 +1108,7 @@ function restartQuiz() {
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
     document.getElementById("avtorFooter").style.display = "none";
-    // Ponovno zaženi kviz brez ponovnega vprašanja za način reševanja
+    // Ponovno zaženi kviz direktno, brez kakršnih koli vprašanj
     startQuizDirect();
 }
 
@@ -1112,6 +1126,7 @@ function izberiDrugKviz() {
     document.getElementById("izberiKvizBtn").style.display = "none";
     // Ponovno prikažemo gumb Info v 2. koraku, če je bil skrit
     document.getElementById("infoBtn2").style.display = "block";
+    // Ohranimo isGroupMode in userName - ne ponastavimo jih!
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
