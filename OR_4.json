@@ -5,7 +5,7 @@
       "q": "Kaj naredi gumb za vklop na računalniku?",
       "a": ["Izklopi zaslon", "Zažene računalnik", "Odpre internet"],
       "c": 1,
-      "e": "Gumb za vklop (power) zažene računalnik. Počakaj, da se vklopi – zaslon se prižge in pojavijo se ikone."
+      "e": "Gumb za vklop (Power) zažene računalnik. Počakaj, da se vklopi – zaslon se prižge in pojavijo se ikone."
     },
     {
       "q": "Kaj je prenosni računalnik (laptop)?",
@@ -23,7 +23,7 @@
       "q": "Kaj je Bluetooth?",
       "a": ["Brezžična povezava na kratke razdalje (npr. za slušalke)", "Vrsta virusa", "Program za urejanje slik"],
       "c": 0,
-      "e": "Bluetooth omogoča brezžično povezavo med napravami na kratke razdalje, npr. slušalke ali tipkovnico brez kabla."
+      "e": "Bluetooth omogoča brezžično povezavo med napravami na kratke razdalje, npr. slušalke ali tipkovnico."
     },
     {
       "q": "Kaj je 'trdi disk' (hard disk) v računalniku?",
@@ -32,16 +32,16 @@
       "e": "Trdi disk (HDD ali SSD) je glavni pomnilnik računalnika, kjer so trajno shranjeni vsi podatki, programi in datoteke - tudi ko računalnik izklopiš."
     },
     {
-      "q": "Za kaj se uporablja HDMI kabel?",
+      "q": "Za kaj se uporablja HDMI kabel (High-Definition Multimedia Interface)?",
       "a": ["Za povezavo računalnika z zunanjim zaslonom ali TV", "Za polnjenje baterije", "Za priklop miške"],
       "c": 0,
-      "e": "HDMI kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
+      "e": "HDMI (High-Definition Multimedia Interface: vmesnik za prenos visokoločljivostne slike in zvoka) kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
     },
     {
       "q": "Kaj pomeni 'shrani datoteko'?",
       "a": ["Izbrišeš datoteko", "Datoteko shraniš na disk ali USB", "Odpreš datoteko"],
       "c": 1,
-      "e": "Shranjevanje pomeni, da podatki ostanejo na računalniku tudi po izklopu. Vedno shrani svoje delo!"
+      "e": "Shranjevanje pomeni, da podatki ostanejo na računalniku ali USB pomnilniškem 'ključku' tudi po izklopu. Vedno shrani svoje delo!"
     },
     {
       "q": "Kaj je mapa na računalniku?",
@@ -89,7 +89,7 @@
       "q": "Kako pošlješ e-pošto?",
       "a": ["Vpišeš naslov prejemnika, zapišeš sporočilo in klikneš 'Pošlji'", "Pokličeš prijatelja", "Napišeš pismo na papir"],
       "c": 0,
-      "e": "Najprej napišeš naslov prejemnika, zadevo in vsebino – potem klikneš 'Pošlji'."
+      "e": "Najprej napišeš naslov prejemnika, za tem zadevo (nsalov) in vsebino – potem klikneš 'Pošlji'."
     },
     {
       "q": "Kaj naredi bližnjica Ctrl+S?",
