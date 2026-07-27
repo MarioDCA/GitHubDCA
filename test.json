@@ -1,0 +1,40 @@
+{
+  "naslov": "Testni kviz (5 vprašanj)",
+  "vprasanja": [
+    {
+      "q": "Katera barva je nebo?",
+      "a": ["Rdeča", "Modra", "Zelena", "Rumena"],
+      "c": 1,
+      "e": "Nebo je modro zaradi sipanja sončne svetlobe v atmosferi."
+    },
+    {
+      "q": "Koliko nog ima pes?",
+      "a": ["2", "3", "4", "5"],
+      "c": 2,
+      "e": "Psi imajo običajno 4 noge."
+    },
+    {
+      "q": "Kateri planet je najbližji Soncu?",
+      "a": ["Venera", "Zemlja", "Merkur", "Mars"],
+      "c": 2,
+      "e": "Merkur je najbližji planet Soncu."
+    },
+    {
+      "q": "Kaj pomeni kratica HTML?",
+      "a": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Hyper Transfer Markup Language",
+        "Home Tool Markup Language"
+      ],
+      "c": 0,
+      "e": "HTML pomeni Hyper Text Markup Language - jezik za označevanje spletnih strani."
+    },
+    {
+      "q": "Kateri letni čas pride po pomladi?",
+      "a": ["Zima", "Jesen", "Poletje", "Pomlad"],
+      "c": 2,
+      "e": "Po pomladi pride poletje."
+    }
+  ]
+}
