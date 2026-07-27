@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="sl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Kviz: test</title>
+<title>Kviz: Uporaba umetne inteligence 1</title>
 
 <style>
 /* ========== OSNOVNE SPREMENLJIVKE (privzeto temni način) ========== */
@@ -636,10 +636,12 @@ let audioCtx = null;
 let answered = false;
 let soundEnabled = (localStorage.getItem("kvizSound") !== "off");
 let isGroupMode = false;
-let hasSelectedMode = false;
+let hasSelectedMode = false; // Ali je uporabnik že izbral način reševanja
 
 // Google Sheet URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
+// const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
+// nov skript od DS 
+const scriptURL = "https://script.google.com/macros/s/AKfycbzzzv4nInr9E_0lPOXHK9yfeJJeXyS3ueaCtsT03MaKhew5pF_JSCNvMOWP8D6h-qo/exec";
 
 function escapeHtml(str) {
     return String(str)
@@ -650,12 +652,7 @@ function escapeHtml(str) {
         .replace(/'/g, "&#039;");
 }
 
-// ========== SEZNAM VSEH KVIZOV ==========
 const KVIZI = [
-    // TESTNI KVIZ - SAMO 5 VPRAŠANJ ZA HITRO TESTIRANJE
-    {id: "TEST", ime: "test.json", naslov: "🧪 Testni kviz (5 vprašanj)", datoteka: "test.json", kategorija: "🧪 Testni kvizi"},
-    
-    // PRAVI KVIZI
     {id: "OR_1", ime: "OR_1.json", naslov: "Osnovni računalniški pojmi",   datoteka: "OR_1.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_2", ime: "OR_2.json", naslov: "Osnove interneta in brskanja", datoteka: "OR_2.json", kategorija: "🖥️ Osnove računalništva"},
     {id: "OR_3", ime: "OR_3.json", naslov: "Varnost na spletu",           datoteka: "OR_3.json", kategorija: "🖥️ Osnove računalništva"},
@@ -786,10 +783,12 @@ function handleIntroSubmit() {
         
         // Če smo že izbrali način reševanja (pri ponovnem izbiranju kviza), preskočimo vse korake
         if (hasSelectedMode && userName !== "") {
+            // Preskoči korak 1 in 2, direktno začni kviz
             step1.style.display = "none";
             step2.style.display = "none";
             startQuizDirect();
         } else {
+            // Sicer pokažemo izbiro načina
             step1.style.display = "block";
         }
     } else if (step1.style.display !== "none") {
@@ -799,6 +798,7 @@ function handleIntroSubmit() {
         hasSelectedMode = true;
         step1.style.display = "none";
         step2.style.display = "block";
+        // Skrijemo gumb Info v 3. koraku
         document.getElementById("infoBtn2").style.display = "none";
     } else {
         // 3. korak: vnos imena in začetek kviza
@@ -846,6 +846,7 @@ async function startQuiz() {
     document.getElementById("avtorFooter").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     
+    // Prikaži naslov kviza
     document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
     
     currentQuestion = 0;
@@ -859,6 +860,7 @@ async function startQuiz() {
     showQuestion();
 }
 
+// Nova funkcija za direktni začetek kviza (preskoči vse korake)
 async function startQuizDirect() {
     if (userName === "") {
         userName = document.getElementById("ime").value.trim();
@@ -890,6 +892,7 @@ async function startQuizDirect() {
     document.getElementById("avtorFooter").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     
+    // Prikaži naslov kviza
     document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
     
     currentQuestion = 0;
@@ -898,6 +901,7 @@ async function startQuizDirect() {
     answered = false;
     if (questionTimer) clearTimeout(questionTimer);
     
+    // Uporabi obstoječo nastavitev isGroupMode
     prepareQuestions(!isGroupMode);
     
     showQuestion();
@@ -1042,7 +1046,7 @@ function finishQuiz() {
         });
         if (!hasWrong) reviewHtml = "<h2>🎉 Zelo dobro! Vsi odgovori so pravilni, a žal premalo za pozitivno oceno? Preveri ocenjevanje.</h2>";
         
-        let counter = 10;
+        let counter = 20;
         document.getElementById("score").innerHTML = `
             <div class="fail">Kviz nisi opravil/a uspešno. Nič zato, vaja dela mojstra.<br>Da bi napredoval/a, je treba kviz ponoviti.</div>
             <div style="font-size:22px; margin-top:15px;">Kviz se bo samodejno ponovil čez:</div>
@@ -1106,6 +1110,7 @@ function restartQuiz() {
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
     document.getElementById("avtorFooter").style.display = "none";
+    // Ponovno zaženi kviz direktno, brez kakršnih koli vprašanj
     startQuizDirect();
 }
 
@@ -1121,12 +1126,15 @@ function izberiDrugKviz() {
     document.getElementById("introStep2").style.display = "none";
     document.getElementById("izbiraKviza").value = "";
     document.getElementById("izberiKvizBtn").style.display = "none";
+    // Ponovno prikažemo gumb Info v 2. koraku, če je bil skrit
     document.getElementById("infoBtn2").style.display = "block";
+    // Ohranimo isGroupMode in userName - ne ponastavimo jih!
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
     const cas = new Date().toLocaleString();
     
+    // Ustvari tekstovno preglednico z rezultati
     let podrobnostiTekst = "\n";
     podrobnostiTekst += "=".repeat(50) + "\n";
     podrobnostiTekst += "  PODROBNOSTI PO VPRAŠANJIH\n";
@@ -1146,6 +1154,7 @@ function sendResult(pravilni, vprasanja, ocena) {
     
     podrobnostiTekst += "\n" + "=".repeat(50) + "\n";
     
+    // Ustvari lepo oblikovano tekstovno sporočilo
     const tekstContent = `
 📊 REZULTATI KVIZA
 ${"=".repeat(50)}
@@ -1170,6 +1179,7 @@ Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.
 © 2026 - Vse pravice pridržane
     `;
     
+    // Pripravi podatke za pošiljanje
     let data = {
         ime: userName,
         kviz: KVIZ_IME,
@@ -1180,6 +1190,7 @@ Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.
         rezultati: tekstContent
     };
     
+    // Dodaj podrobnosti za vsako vprašanje
     for (let i = 0; i < userAnswers.length; i++) {
         const q = questions[i];
         if (userAnswers[i] !== undefined) {
