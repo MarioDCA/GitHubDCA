@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="sl">
 <head>
 <meta charset="UTF-8">
@@ -138,7 +138,7 @@ body {
 
 /* okvirček z imenom datoteke - spodaj pod uvodnim okvirjem */
 .file-info {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
 }
 .file-info-box {
@@ -168,7 +168,7 @@ body {
 }
 
 .avtorFooter {
-    margin-top: 15px;
+    margin-top: 10px;
     text-align: center;
     font-size: 12px;
     color: var(--text-secondary);
@@ -315,7 +315,7 @@ h2 {
     background: var(--btn-start-hover);
 }
 
-#infoBtn {
+#infoBtn, #infoBtn2 {
     width: 100%;
     font-size: 16px;
     padding: 8px;
@@ -326,7 +326,7 @@ h2 {
     border: 1px solid var(--border-light);
     color: var(--text-primary);
 }
-#infoBtn:hover {
+#infoBtn:hover, #infoBtn2:hover {
     background: var(--btn-hover);
 }
 
@@ -381,6 +381,13 @@ h2 {
     box-shadow: var(--shadow);
 }
 
+#kvizNaslov {
+    font-size: 22px;
+    color: var(--info-blue);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
 .answerBtn {
     display: block;
     width: 600px;
@@ -416,6 +423,7 @@ h2 {
 #nextBtn:focus-visible,
 #izberiKvizBtn:focus-visible,
 #infoBtn:focus-visible,
+#infoBtn2:focus-visible,
 #themeToggle:focus-visible,
 #soundToggle:focus-visible,
 #repeatBtn:focus-visible,
@@ -548,6 +556,7 @@ h2 {
       <p>Spodaj izberite temo in začnite reševati.</p>
     </div>
     <form onsubmit="handleIntroSubmit(); return false;">
+      <!-- 1. KORAK: IZBIRA KVIZA -->
       <div id="introStep0">
         <select id="izbiraKviza" onchange="document.getElementById('izberiKvizBtn').style.display='block';">
           <option value="">-- Izberi kviz --</option>
@@ -556,20 +565,8 @@ h2 {
         <button id="infoBtn" type="button">ℹ️ Info</button>
       </div>
 
+      <!-- 2. KORAK: IZBIRA NAČINA REŠEVANJA -->
       <div id="introStep1" style="display:none">
-        <label for="ime" style="display: block; margin-bottom: 8px; font-size: 18px;">Vpiši svoje ime:</label>
-        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off" style="width: 320px; max-width: 80%; font-size: 20px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-light); text-align: center; background: var(--bg-card); color: var(--text-primary);">
-        <button id="nextBtn" type="submit">➡️ Naprej</button>
-
-        <div class="infoBox">
-          <div class="encouragement">
-              🌟 <strong>Brez skrbi!</strong> Vsak klik je korak naprej.<br>
-              Če česa ne veš, nič ne de – ob vsakem odgovoru dobiš prijazno razlago.
-          </div>
-        </div>
-      </div>
-
-      <div id="introStep2" style="display:none">
         <div class="modeSelect">
           <label class="modeSelectLabel">Kako rešujete kviz?</label>
           <div class="modeOptions">
@@ -577,8 +574,23 @@ h2 {
             <label><input type="radio" name="nacinResevanja" value="skupina"> 👥 Skupina</label>
           </div>
         </div>
+        <button id="nextBtn" type="submit">➡️ Naprej</button>
+        <button id="infoBtn2" type="button">ℹ️ Info</button>
+      </div>
+
+      <!-- 3. KORAK: VNOS IMENA -->
+      <div id="introStep2" style="display:none">
+        <label for="ime" style="display: block; margin-bottom: 8px; font-size: 18px;">Vpiši svoje ime:</label>
+        <input id="ime" placeholder="npr. Maja ali Bojan" autocomplete="off" style="width: 320px; max-width: 80%; font-size: 20px; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-light); text-align: center; background: var(--bg-card); color: var(--text-primary);">
         <button id="startBtn" type="submit">🚀 Začni kviz</button>
         <p id="nalaganjeSporocilo" style="display:none; font-size:14px; opacity:0.8;">⏳ Nalagam vprašanja …</p>
+        
+        <div class="infoBox">
+          <div class="encouragement">
+              🌟 <strong>Brez skrbi!</strong> Vsak klik je korak naprej.<br>
+              Če česa ne veš, nič ne de – ob vsakem odgovoru dobiš prijazno razlago.
+          </div>
+        </div>
       </div>
     </form>
   </div>
@@ -594,7 +606,9 @@ h2 {
 <div class="avtorFooter" id="avtorFooter">
     Avtor: M.V.
 </div>
+
 <div id="quiz" style="display:none">
+  <div id="kvizNaslov"></div>
   <div id="progress"></div>
   <div id="progressBarBox"><div id="progressBar"></div></div>
   <h3 id="question"></h3>
@@ -622,9 +636,12 @@ let audioCtx = null;
 let answered = false;
 let soundEnabled = (localStorage.getItem("kvizSound") !== "off");
 let isGroupMode = false;
+let hasSelectedMode = false; // Ali je uporabnik že izbral način reševanja
 
 // Google Sheet URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
+// const scriptURL = "https://script.google.com/macros/s/AKfycbybest-lxKhLiKM6k1HX6zdl6a3kipdHXDjmTbaPIdduR5cDXl5uOmw6TEF1GZxqJHT/exec";
+// nov skript od DS 
+const scriptURL = "https://script.google.com/macros/s/AKfycbzzzv4nInr9E_0lPOXHK9yfeJJeXyS3ueaCtsT03MaKhew5pF_JSCNvMOWP8D6h-qo/exec";
 
 function escapeHtml(str) {
     return String(str)
@@ -750,6 +767,7 @@ function handleIntroSubmit() {
     const step2 = document.getElementById("introStep2");
     
     if (step0.style.display !== "none") {
+        // 1. korak: izbira kviza
         const izbiraSelect = document.getElementById("izbiraKviza");
         if (!izbiraSelect.value) {
             alert("Izberite kviz.");
@@ -762,27 +780,45 @@ function handleIntroSubmit() {
         }
         vprasanjaPromise = naloziVprasanja(izbranKviz.datoteka);
         step0.style.display = "none";
-        step1.style.display = "block";
-    } else if (step2.style.display === "none") {
+        
+        // Če smo že izbrali način reševanja (pri ponovnem izbiranju kviza), preskočimo vse korake
+        if (hasSelectedMode && userName !== "") {
+            // Preskoči korak 1 in 2, direktno začni kviz
+            step1.style.display = "none";
+            step2.style.display = "none";
+            startQuizDirect();
+        } else {
+            // Sicer pokažemo izbiro načina
+            step1.style.display = "block";
+        }
+    } else if (step1.style.display !== "none") {
+        // 2. korak: izbira načina reševanja
+        const nacinRadio = document.querySelector('input[name="nacinResevanja"]:checked');
+        isGroupMode = nacinRadio ? (nacinRadio.value === "skupina") : false;
+        hasSelectedMode = true;
+        step1.style.display = "none";
+        step2.style.display = "block";
+        // Skrijemo gumb Info v 3. koraku
+        document.getElementById("infoBtn2").style.display = "none";
+    } else {
+        // 3. korak: vnos imena in začetek kviza
         const imeVneseno = document.getElementById("ime").value.trim();
         if (imeVneseno === "") {
             alert("Vpišite ime");
             return;
         }
-        step1.style.display = "none";
-        step2.style.display = "block";
-    } else {
-        const nacinRadio = document.querySelector('input[name="nacinResevanja"]:checked');
-        isGroupMode = nacinRadio ? (nacinRadio.value === "skupina") : false;
+        userName = imeVneseno;
         startQuiz();
     }
 }
 
 async function startQuiz() {
-    userName = document.getElementById("ime").value.trim();
     if (userName === "") {
-        alert("Vpišite ime");
-        return;
+        userName = document.getElementById("ime").value.trim();
+        if (userName === "") {
+            alert("Vpišite ime");
+            return;
+        }
     }
     
     initAudioOnUserInteraction();
@@ -810,12 +846,62 @@ async function startQuiz() {
     document.getElementById("avtorFooter").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     
+    // Prikaži naslov kviza
+    document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
+    
     currentQuestion = 0;
     score = 0;
     userAnswers = [];
     answered = false;
     if (questionTimer) clearTimeout(questionTimer);
     
+    prepareQuestions(!isGroupMode);
+    
+    showQuestion();
+}
+
+// Nova funkcija za direktni začetek kviza (preskoči vse korake)
+async function startQuizDirect() {
+    if (userName === "") {
+        userName = document.getElementById("ime").value.trim();
+        if (userName === "") {
+            alert("Vpišite ime");
+            return;
+        }
+    }
+    
+    initAudioOnUserInteraction();
+    
+    const nalaganjeSporocilo = document.getElementById("nalaganjeSporocilo");
+    if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "block";
+    
+    try {
+        questions = await vprasanjaPromise;
+    } catch (err) {
+        alert("Napaka pri nalaganju vprašanj (" + err.message + "). Preveri internetno povezavo in poskusi znova.");
+        if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
+        return;
+    }
+    
+    KVIZ_IME = izbranKviz.ime;
+    
+    if (nalaganjeSporocilo) nalaganjeSporocilo.style.display = "none";
+    
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("fileInfo").style.display = "none";
+    document.getElementById("avtorFooter").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+    
+    // Prikaži naslov kviza
+    document.getElementById("kvizNaslov").innerText = `📚 ${izbranKviz.naslov}`;
+    
+    currentQuestion = 0;
+    score = 0;
+    userAnswers = [];
+    answered = false;
+    if (questionTimer) clearTimeout(questionTimer);
+    
+    // Uporabi obstoječo nastavitev isGroupMode
     prepareQuestions(!isGroupMode);
     
     showQuestion();
@@ -960,7 +1046,7 @@ function finishQuiz() {
         });
         if (!hasWrong) reviewHtml = "<h2>🎉 Zelo dobro! Vsi odgovori so pravilni, a žal premalo za pozitivno oceno? Preveri ocenjevanje.</h2>";
         
-        let counter = 10;
+        let counter = 20;
         document.getElementById("score").innerHTML = `
             <div class="fail">Kviz nisi opravil/a uspešno. Nič zato, vaja dela mojstra.<br>Da bi napredoval/a, je treba kviz ponoviti.</div>
             <div style="font-size:22px; margin-top:15px;">Kviz se bo samodejno ponovil čez:</div>
@@ -1024,7 +1110,8 @@ function restartQuiz() {
     document.getElementById("finalResult").style.display = "none";
     document.getElementById("fileInfo").style.display = "none";
     document.getElementById("avtorFooter").style.display = "none";
-    startQuiz();
+    // Ponovno zaženi kviz direktno, brez kakršnih koli vprašanj
+    startQuizDirect();
 }
 
 function izberiDrugKviz() {
@@ -1039,102 +1126,57 @@ function izberiDrugKviz() {
     document.getElementById("introStep2").style.display = "none";
     document.getElementById("izbiraKviza").value = "";
     document.getElementById("izberiKvizBtn").style.display = "none";
+    // Ponovno prikažemo gumb Info v 2. koraku, če je bil skrit
+    document.getElementById("infoBtn2").style.display = "block";
+    // Ohranimo isGroupMode in userName - ne ponastavimo jih!
 }
 
 function sendResult(pravilni, vprasanja, ocena) {
     const cas = new Date().toLocaleString();
     
-    // Ustvari preglednico z rezultati po vprašanjih
-    let podrobnostiHtml = '<table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif; font-size: 14px;">';
-    podrobnostiHtml += '<tr style="background-color: #4CAF50; color: white;">';
-    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Vprašanje</th>';
-    podrobnostiHtml += '<th style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">Rezultat</th>';
-    podrobnostiHtml += '</tr>';
+    // Ustvari tekstovno preglednico z rezultati
+    let podrobnostiTekst = "\n";
+    podrobnostiTekst += "=".repeat(50) + "\n";
+    podrobnostiTekst += "  PODROBNOSTI PO VPRAŠANJIH\n";
+    podrobnostiTekst += "=".repeat(50) + "\n\n";
     
     for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
         let rezultat = '';
-        let barva = '';
         if (userAnswers[i] !== undefined) {
             const isCorrect = (q.shuffled[userAnswers[i]].originalIndex === q.c);
-            rezultat = isCorrect ? '✅ Pravilno' : '❌ Napačno';
-            barva = isCorrect ? '#d4edda' : '#f8d7da';
+            rezultat = isCorrect ? '[✔] Pravilno' : '[✘] Napačno';
         } else {
-            rezultat = '⬜ Ni odgovora';
-            barva = '#e2e3e5';
+            rezultat = '[ ] Ni odgovora';
         }
-        podrobnostiHtml += `<tr style="background-color: ${barva};">`;
-        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${i+1}</td>`;
-        podrobnostiHtml += `<td style="padding: 8px 12px; border: 1px solid #ddd; text-align: center;">${rezultat}</td>`;
-        podrobnostiHtml += '</tr>';
+        podrobnostiTekst += `Vprašanje ${String(i+1).padStart(2, ' ')}: ${rezultat}\n`;
     }
-    podrobnostiHtml += '</table>';
     
-    // Določi barvo glede na oceno
-    let barvaOcene = '';
-    let emoji = '';
-    if (ocena >= 5) { barvaOcene = '#28a745'; emoji = '🏆'; }
-    else if (ocena >= 4) { barvaOcene = '#17a2b8'; emoji = '🌟'; }
-    else if (ocena >= 3) { barvaOcene = '#ffc107'; emoji = '👍'; }
-    else if (ocena >= 2) { barvaOcene = '#fd7e14'; emoji = '📚'; }
-    else { barvaOcene = '#dc3545'; emoji = '💪'; }
+    podrobnostiTekst += "\n" + "=".repeat(50) + "\n";
     
-    // Ustvari lepo oblikovano HTML sporočilo
-    const htmlContent = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center; }
-            .content { background: #f8f9fa; padding: 20px; border-radius: 0 0 10px 10px; }
-            .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #dee2e6; }
-            .info-label { font-weight: bold; color: #495057; }
-            .info-value { color: #212529; }
-            .score-box { background: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-            .score-number { font-size: 32px; font-weight: bold; color: ${barvaOcene}; }
-            .grade-box { background: ${barvaOcene}; color: white; padding: 10px; border-radius: 8px; font-size: 24px; font-weight: bold; text-align: center; margin: 15px 0; }
-            .details-title { font-size: 18px; font-weight: bold; margin: 20px 0 10px 0; color: #495057; }
-            .footer { text-align: center; margin-top: 20px; color: #6c757d; font-size: 12px; }
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <h1 style="margin: 0; font-size: 24px;">📊 Rezultati kviza</h1>
-        </div>
-        <div class="content">
-            <div class="info-row">
-                <span class="info-label">👤 Ime:</span>
-                <span class="info-value">${escapeHtml(userName)}</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">📚 Kviz:</span>
-                <span class="info-value">${escapeHtml(izbranKviz.naslov)}</span>
-            </div>
-            <div class="info-row">
-                <span class="info-label">📅 Datum in čas:</span>
-                <span class="info-value">${cas}</span>
-            </div>
-            
-            <div class="score-box">
-                <div style="font-size: 16px; color: #6c757d;">Število pravilnih odgovorov</div>
-                <div class="score-number">${pravilni} / ${vprasanja}</div>
-            </div>
-            
-            <div class="grade-box">
-                ${emoji} Ocena: ${ocena} ${emoji}
-            </div>
-            
-            <div class="details-title">📝 Podrobnosti po vprašanjih:</div>
-            ${podrobnostiHtml}
-        </div>
-        <div class="footer">
-            <p>Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.</p>
-            <p>© 2026 - Vse pravice pridržane</p>
-        </div>
-    </body>
-    </html>
+    // Ustvari lepo oblikovano tekstovno sporočilo
+    const tekstContent = `
+📊 REZULTATI KVIZA
+${"=".repeat(50)}
+
+👤 Ime: ${escapeHtml(userName)}
+📚 Kviz: ${escapeHtml(izbranKviz.naslov)}
+📅 Datum in čas: ${cas}
+
+${"=".repeat(50)}
+  ŠTEVILO PRAVILNIH ODGOVOROV
+  ${pravilni} / ${vprasanja}
+${"=".repeat(50)}
+
+🎓 OCENA: ${ocena}
+${"=".repeat(50)}
+
+📝 PODROBNOSTI PO VPRAŠANJIH:
+${podrobnostiTekst}
+
+---
+Kviz je bil ustvarjen za namen učenja računalništva in umetne inteligence.
+© 2026 - Vse pravice pridržane
     `;
     
     // Pripravi podatke za pošiljanje
@@ -1145,7 +1187,7 @@ function sendResult(pravilni, vprasanja, ocena) {
         vprasanja: vprasanja,
         ocena: ocena,
         cas: cas,
-        html: htmlContent
+        rezultati: tekstContent
     };
     
     // Dodaj podrobnosti za vsako vprašanje
@@ -1301,6 +1343,7 @@ document.addEventListener("keydown", function(e) {
 document.getElementById("themeToggle").addEventListener("click", toggleTheme);
 document.getElementById("soundToggle").addEventListener("click", toggleSound);
 document.getElementById("infoBtn").addEventListener("click", showInfoModal);
+document.getElementById("infoBtn2").addEventListener("click", showInfoModal);
 document.querySelector(".closeModal").addEventListener("click", closeInfoModal);
 window.addEventListener("click", function(e) {
     const modal = document.getElementById("infoModal");
