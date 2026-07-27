@@ -1,0 +1,8 @@
+preglednica:
+https://docs.google.com/spreadsheets/d/1nTluXy5whv0Xt53c0HwTR_vhhMwBUjtMrbLCwWkHvJ4/edit?pli=1&gid=0#gid=0
+
+skripta:
+https://script.google.com/u/0/home/projects/1dS7QasCagld1c6Sk3zdumo-mew7vjW6y6VrfwvYDsBzJAIMyQ4yG5RXZ/edit
+
+github index html
+https://mariodca.github.io/GitHubDCA/

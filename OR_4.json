@@ -35,7 +35,7 @@
       "q": "Za kaj se uporablja HDMI kabel (High-Definition Multimedia Interface)?",
       "a": ["Za povezavo računalnika z zunanjim zaslonom ali TV", "Za polnjenje baterije", "Za priklop miške"],
       "c": 0,
-      "e": "HDMI (High-Definition Multimedia Interface: vmesnik za prenos visokoločljivostne slike in zvoka) kabel prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
+      "e": "HDMI kabel (High-Definition Multimedia Interface: vmesnik za prenos visokoločljivostne slike in zvoka) prenaša sliko in zvok, npr. med prenosnikom in televizorjem ali monitorjem."
     },
     {
       "q": "Kaj pomeni 'shrani datoteko'?",
@@ -125,7 +125,7 @@
       "q": "Kako varno izklopiš računalnik?",
       "a": ["Start → Izklop", "Pritisnem gumb za vklop in držim", "Izklopim kabel"],
       "c": 0,
-      "e": "Vedno uporabi meni Start (Windows) → Izklop. S tem ne poškoduješ podatkov."
+      "e": "Vedno uporabi meni Start 🪟 → Izklop. S tem ne poškoduješ podatkov."
     },
     {
       "q": "Kaj je tiskalnik (printer)?",

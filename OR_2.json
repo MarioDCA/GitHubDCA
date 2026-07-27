@@ -45,18 +45,18 @@
     },
     {
       "q": "Kaj je program na računalniku?",
-      "a": ["Program je orodje, ki nekaj naredi (npr. piše besedilo ali riše, z njim brskaš po spletu)", "Fizični del računalnika", "Vrsta kabla"],
+      "a": ["Program je orodje, ki nekaj naredi npr. piše besedilo ali riše, z njim brskaš po spletu", "Fizični del računalnika", "Vrsta kabla"],
       "c": 0,
       "e": "Program je programska oprema, ki omogoča izvajanje različnih nalog, npr. pisanje, računanje ali brskanje po spletu."
     },
     {
       "q": "Kaj je aplikacija (app)?",
-      "a": ["Program, ki ga uporabljaš za določeno nalogo (npr. sporočila ali vreme)", "Del tipkovnice", "Zaslon računalnika"],
+      "a": ["Program, ki ga uporabljaš za določeno nalogo npr. sporočila ali vreme", "Del tipkovnice", "Zaslon računalnika"],
       "c": 0,
       "e": "Aplikacija je običajno enostaven program, pogosto na telefonu, namenjen eni določeni nalogi."
     },
     {
-      "q": "Kaj pomeni 'odpreti datoteko'?",
+      "q": "Kaj pomeni 'odpreti' datoteko?",
       "a": ["Izbrisati datoteko", "Prikazati njeno vsebino", "Premakniti datoteko"],
       "c": 1,
       "e": "Ko odpreš datoteko, vidiš njeno vsebino."
@@ -65,10 +65,10 @@
       "q": "Kaj pomeni 'prenesti datoteko (download)'?",
       "a": ["Poslati datoteko", "Shraniti datoteko s spleta", "Izbrisati datoteko"],
       "c": 1,
-      "e": "Prenos pomeni, da datoteko iz spleta shraniš na računalnik."
+      "e": "Prenos pomeni, da datoteko iz spleta preneseš (shraniš) na računalnik."
     },
     {
-      "q": "Kaj pomeni 'naložiti datoteko (upload)'?",
+      "q": "Kaj pomeni 'naložiti' datoteko (upload)?",
       "a": ["Poslati datoteko na splet", "Izbrisati datoteko", "Odpreti datoteko"],
       "c": 0,
       "e": "Nalaganje pomeni, da datoteko pošlješ na splet ali drug računalnik."
