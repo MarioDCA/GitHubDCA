@@ -5,6 +5,92 @@
 // Avtor: M.V. (DeepSeek)
 // ============================================================
 
+// ============================================================
+// FUNKCIJA za GET zahtevke (ko odpreš URL v browserju)
+// ============================================================
+function doGet() {
+  var htmlOutput = HtmlService.createHtmlOutput(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Kviz API - Test</title>
+      <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; background: #f0f4f8; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #667eea; }
+        .info { background: #e8f4fd; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea; }
+        .status { color: #2ecc71; font-weight: bold; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .example { background: #2d2d2d; color: #f8f8f8; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
+        .footer { margin-top: 30px; color: #6c757d; font-size: 12px; border-top: 1px solid #dee2e6; padding-top: 15px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>🚀 Kviz API - Aktiven</h1>
+        <div class="info">
+          <p><span class="status">✅</span> Web App je uspešno objavljen!</p>
+          <p>📌 Ta URL sprejema <strong>POST</strong> zahtevke za shranjevanje rezultatov kviza.</p>
+        </div>
+        
+        <h3>📤 Kako uporabljati:</h3>
+        <p>Pošlji POST zahtevek z JSON podatki na ta URL.</p>
+        
+        <h4>Primer JSON:</h4>
+        <div class="example">
+          {
+            "ime": "Janez Novak",
+            "kviz": "OR_1.json",
+            "pravilni": 4,
+            "vprasanja": 5,
+            "ocena": 4,
+            "Q1": 1,
+            "Q2": 0,
+            "Q3": 1,
+            "Q4": 1,
+            "Q5": 1
+          }
+        </div>
+        
+        <h4>Primer klica v JavaScript:</h4>
+        <div class="example">
+          fetch('${ScriptApp.getService().getUrl()}', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              ime: 'Janez Novak',
+              kviz: 'OR_1.json',
+              pravilni: 4,
+              vprasanja: 5,
+              ocena: 4,
+              Q1: 1, Q2: 0, Q3: 1, Q4: 1, Q5: 1
+            })
+          })
+        </div>
+        
+        <h4>Primer s cURL:</h4>
+        <div class="example">
+          curl -X POST ${ScriptApp.getService().getUrl()} \\
+            -H "Content-Type: application/json" \\
+            -d '{"ime":"Janez Novak","kviz":"OR_1.json","pravilni":4,"vprasanja":5,"ocena":4,"Q1":1,"Q2":0,"Q3":1,"Q4":1,"Q5":1}'
+        </div>
+        
+        <div class="footer">
+          <p>📅 Inačica: 2026-07-28</p>
+          <p>© 2026 - Vse pravice pridržane</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `);
+  return htmlOutput;
+}
+
+// ============================================================
+// GLAVNA FUNKCIJA za POST zahtevke
+// ============================================================
 function doPost(e) {
   try {
     var sheet = SpreadsheetApp.getActiveSheet();
@@ -38,6 +124,9 @@ function doPost(e) {
   }
 }
 
+// ============================================================
+// FUNKCIJA za pošiljanje lepega HTML emaila z rezultati kviza
+// ============================================================
 function sendNiceEmail(rowData, data) {
   // Podatki iz vrstice
   var ime = rowData[1];
